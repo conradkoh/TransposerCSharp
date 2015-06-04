@@ -1,0 +1,5 @@
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_Lib\bin\Release\Transposer_Lib.dll
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_Lib\bin\Release\Transposer_Lib.pdb
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_Lib\obj\Release\Transposer_Lib.csprojResolveAssemblyReference.cache
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_Lib\obj\Release\Transposer_Lib.dll
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_Lib\obj\Release\Transposer_Lib.pdb

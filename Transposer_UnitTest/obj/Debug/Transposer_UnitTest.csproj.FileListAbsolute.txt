@@ -1,0 +1,7 @@
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_UnitTest\bin\Debug\Transposer_UnitTest.dll
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_UnitTest\bin\Debug\Transposer_UnitTest.pdb
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_UnitTest\obj\Debug\Transposer_UnitTest.csprojResolveAssemblyReference.cache
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_UnitTest\obj\Debug\Transposer_UnitTest.dll
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_UnitTest\obj\Debug\Transposer_UnitTest.pdb
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_UnitTest\bin\Debug\Transposer_Lib.dll
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_UnitTest\bin\Debug\Transposer_Lib.pdb

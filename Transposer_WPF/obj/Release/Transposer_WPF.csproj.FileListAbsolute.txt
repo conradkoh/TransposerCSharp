@@ -1,0 +1,1 @@
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\bin\Release\Transposer_WPF.exe.config
