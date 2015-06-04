@@ -14,10 +14,9 @@ namespace Transposer_Lib
         static string[] notes = new string[12];
         static string[] notes_alias = new string[12];
         static bool isInitalized = false;
+        const string _songDIR = ".\\Songs";
 
         File songFile;
-        string songTitle;
-        string currentKey;
         List<string> songLines;
         
         public Song(string fileName)
@@ -89,10 +88,22 @@ namespace Transposer_Lib
         }
         public string GetTitle(){
             string filename = songFile.GetFileName();
-            int periodIdx = filename.IndexOf(".");
-            return songFile.GetFileName();
+            string title = filename;
+            if (!String.IsNullOrWhiteSpace(filename))
+            {
+                int periodIdx = filename.IndexOf(".");
+                if (periodIdx != -1)
+                {
+                    title = filename.Substring(0, periodIdx);
+                }
+            }
+            return title;
         }
 
+        public string GetSongDirectory()
+        {
+            return _songDIR;
+        }
 
         //=========================================================
         //Transpose Algorithm Methods

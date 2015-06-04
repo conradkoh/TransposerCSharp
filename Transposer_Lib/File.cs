@@ -16,7 +16,7 @@ namespace Transposer_Lib
         private Stack<string> _debugInfo = new Stack<string>();
         public File()
         {
-            SetFilePath("Default Directory", "default.txt");
+            SetFilePath("Default Directory\\Default.txt");
             Load(_filePath);
             
         }
@@ -24,7 +24,16 @@ namespace Transposer_Lib
         public File(string filePath)
         
         {
-            Load(filePath);
+            try
+            {
+                SetFilePath(filePath);
+                Load(filePath);
+            }
+            catch (Exception e)
+            {
+
+            }
+            
         }
         public void Save()
         {
@@ -73,10 +82,37 @@ namespace Transposer_Lib
             _fileContent = fileContent;
         }
 
-        private void SetFilePath(string fileDirectory, string fileName)
+        public void SetFileContent(string fileContent)
         {
-            _fileDirectory = fileDirectory;
-            _fileName = fileName;
+
+            _fileContent = new List<string>();
+            _fileContent.Add(fileContent);
+        }
+
+        public void SetFilePath(string filePath)
+        {
+            
+            string fileDirectory = new System.IO.FileInfo(filePath).Directory.FullName;
+            string fileName = new System.IO.FileInfo(filePath).Name;
+            if (System.IO.Directory.Exists(fileDirectory) && System.IO.File.Exists(fileName)) 
+            {
+                _filePath = filePath;
+                _fileName = fileName;
+                _fileDirectory = fileDirectory;
+            }
+            
+        }
+        public void SetDirectory(string directory)
+        {
+            if (System.IO.Directory.Exists(directory))
+            {
+                _fileDirectory = directory;
+                _filePath = _fileDirectory + _SEPARATOR + _fileName;
+            }
+        }
+        public void SetFileName(string filename)
+        {
+            _fileName = filename;
             _filePath = _fileDirectory + _SEPARATOR + _fileName;
         }
         private void LoadFromFile()
