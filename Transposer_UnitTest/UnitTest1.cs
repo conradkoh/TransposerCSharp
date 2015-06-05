@@ -134,7 +134,7 @@ namespace Transposer_UnitTest
         public void SONG_CLASS()
         {
             Song song;
-            string[] filenames = new string[10];
+            string[] filenames = new string[3];
             string input;
             string actual;
             string expected;

@@ -9,7 +9,7 @@ namespace Transposer_Lib
     public class File
     {
         private const string _SEPARATOR = "\\";
-        public const string _defaultDIR = ".\\Default Directory";
+        public static string _defaultDIR = System.IO.Directory.GetCurrentDirectory() + "\\Default Directory";
 
         private string _filePath;
 
@@ -17,12 +17,20 @@ namespace Transposer_Lib
         private Stack<string> _debugInfo = new Stack<string>();
         public File()
         {
-            
+        }
+
+        public File(string filePath){
+            Load(filePath);
         }
 
         public void Save()
         {
-            WriteToFile();
+            WriteToFile(_filePath);
+        }
+
+        public void SaveAs(string filePath)
+        {
+            WriteToFile(filePath);
         }
 
         public void Append(string input)
@@ -81,14 +89,12 @@ namespace Transposer_Lib
         {
             _fileContent = fileContent;
         }
-
         public void SetFileContent(string fileContent)
         {
 
             _fileContent = new List<string>();
             _fileContent.Add(fileContent);
         }
-
         public void SetFilePath(string filePath)
         {
             string fileDirectory = _defaultDIR;
@@ -107,6 +113,7 @@ namespace Transposer_Lib
         public void SetDirectory(string directory)
         {
             string fileName = new System.IO.FileInfo(_filePath).Name;
+            System.IO.Directory.CreateDirectory(directory);
             _filePath = directory + _SEPARATOR + fileName;
         }
         public void SetFileName(string filename)
@@ -138,11 +145,11 @@ namespace Transposer_Lib
             file.Close();
             return;
         }
-        private void WriteToFile()
+        private void WriteToFile(string filePath)
         {
             try
             {
-                System.IO.StreamWriter file = new System.IO.StreamWriter(_filePath);
+                System.IO.StreamWriter file = new System.IO.StreamWriter(filePath);
                 foreach (string currentLine in _fileContent)
                 {
                     file.Write(currentLine);
@@ -153,7 +160,30 @@ namespace Transposer_Lib
             }
             catch (Exception e)
             {
-                _debugInfo.Push("Write to file failed.");
+                if (e is System.IO.FileNotFoundException)
+                {
+                    System.IO.File.Create(filePath).Close();
+                    System.IO.StreamWriter file = new System.IO.StreamWriter(filePath);
+                    foreach (string currentLine in _fileContent)
+                    {
+                        file.Write(currentLine);
+                        file.Write(System.Environment.NewLine);
+                    }
+
+                    file.Close();
+                }
+                if (e is System.IO.DirectoryNotFoundException)
+                {
+                    SetDirectory(_defaultDIR);
+                    System.IO.StreamWriter file = new System.IO.StreamWriter(_filePath);
+                    foreach (string currentLine in _fileContent)
+                    {
+                        file.Write(currentLine);
+                        file.Write(System.Environment.NewLine);
+                    }
+
+                    file.Close();
+                }
             }
            
             return;

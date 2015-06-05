@@ -14,7 +14,7 @@ namespace Transposer_Lib
         static string[] notes = new string[12];
         static string[] notes_alias = new string[12];
         static bool isInitalized = false;
-        public const string songDIR = ".\\Songs";
+        public static string songDIR = System.IO.Directory.GetCurrentDirectory() + "\\Songs";
 
         File songFile = new File();
         List<string> songLines;
@@ -23,6 +23,8 @@ namespace Transposer_Lib
         {
             Initialize();
             songFile.Load(fileName);
+            songFile.SetDirectory(songDIR);
+            songFile.Save();
             songLines = songFile.GetFileContent();
         }
         private static void Initialize()

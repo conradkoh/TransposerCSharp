@@ -10,12 +10,14 @@ namespace Transposer_Lib
     {
         Playlist currentPlaylist;
         Playlist library;
-        public const string systemDIR = ".\\System";
-        const string songLibraryPath = ".\\System\\songlist.slist";
-        const string systemFilePath = ".\\System\\Active.tsys";
-        const string debugFilePath = ".\\System\\Debug.txt";
+        static string currentDIR = System.IO.Directory.GetCurrentDirectory();
+        public static string systemDIR = currentDIR + "\\System";
+        static string songLibraryPath = currentDIR + "\\System\\songlist.slist";
+        static string systemFilePath = currentDIR + "\\System\\Active.tsys";
+        static string debugFilePath = currentDIR + "\\System\\Debug.txt";
         File sysFile = new File();
         File debugFile = new File();
+        int currentIdx = 0;
         
 
         public string DISPLAY_MAIN;
@@ -59,10 +61,21 @@ namespace Transposer_Lib
             
         }
 
+        public void Next()
+        {
+            currentIdx = (currentIdx + 1 + currentPlaylist.Count())%currentPlaylist.Count();
+        }
+
+        public void Previous()
+        {
+            currentIdx = (currentIdx - 1 + currentPlaylist.Count()) % currentPlaylist.Count();
+        }
+
         public void LoadPlaylist(string playlistFileName)
         {
             currentPlaylist = new Playlist(playlistFileName);
-            DISPLAY_PLAYLIST = currentPlaylist.GetPlaylist();
+            currentSong = currentPlaylist.FirstSong();
+            UpdateDisplays();
         }
 
         private void UpdateSystemFile()
@@ -74,7 +87,7 @@ namespace Transposer_Lib
         private void UpdateDisplays()
         {
             DISPLAY_PLAYLIST = currentPlaylist.GetPlaylist();
-
+            DISPLAY_MAIN = currentSong.ToString();
         }
     }
 }

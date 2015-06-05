@@ -11,16 +11,17 @@
             <TabItem x:Name="TABCONTROL_MAIN_TAB_MAIN" Header="Main">
                 <Grid x:Name="GRID_TABCONTROL" Background="#FFE5E5E5" Drop="GRID_TABCONTROL_Drop" DragOver="GRID_TABCONTROL_DragOver" AllowDrop="True">
                     <TextBox x:Name="DISPLAY_MAIN" HorizontalAlignment="Left" Height="557" Margin="7,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="713" IsReadOnly="True" IsReadOnlyCaretVisible="True"/>
-                    <Button x:Name="BUTTON_TRANSPOSE_UP" Content="Transpose Up" HorizontalAlignment="Left" Margin="768,90,0,0" VerticalAlignment="Top" Width="165" Height="119" Background="#FFCFC9C9" Click="BUTTON_TRANSPOSE_UP_Click"/>
-                    <Button x:Name="BUTTON_TRANSPOSE_DOWN" Content="Transpose Down" HorizontalAlignment="Left" Margin="769,214,0,0" VerticalAlignment="Top" Width="165" Height="119"/>
+                    <Button x:Name="BUTTON_TRANSPOSE_UP" Content="Transpose Up" HorizontalAlignment="Left" Margin="730,10,0,0" VerticalAlignment="Top" Width="118" Height="119" Background="#FFCFC9C9" Click="BUTTON_TRANSPOSE_UP_Click"/>
+                    <Button x:Name="BUTTON_TRANSPOSE_DOWN" Content="Transpose Down" HorizontalAlignment="Left" Margin="734,142,0,0" VerticalAlignment="Top" Width="111" Height="119"/>
                     <TextBox x:Name="DISPLAY_PLAYLIST" HorizontalAlignment="Left" Height="233" Margin="735,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237"/>
                     <TextBox x:Name="DISPLAY_FEEDBACK" HorizontalAlignment="Left" Height="23" Margin="18,591,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="939"/>
-                    <Button x:Name="OPTIONS_BUTTON_LOAD_PLAYLIST" Content="Load Playlist" HorizontalAlignment="Left" Margin="738,5,0,0" VerticalAlignment="Top" Width="236" Height="28" Click="OPTIONS_BUTTON_LOAD_PLAYLIST_Click"/>
-                    <Button x:Name="MAIN_BUTTON_LOAD_SONG" Content="Load Song" HorizontalAlignment="Left" Margin="740,40,0,0" VerticalAlignment="Top" Width="229" Height="38" Click="MAIN_BUTTON_LOAD_SONG_Click"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="TABCONTROL_MAIN_TAB_OPTIONS" Header="Options">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Button x:Name="OPTIONS_BUTTON_LOAD_PLAYLIST" Content="Load Playlist" HorizontalAlignment="Left" Margin="741,2,0,0" VerticalAlignment="Top" Width="236" Height="28" Click="OPTIONS_BUTTON_LOAD_PLAYLIST_Click"/>
+                    <Button x:Name="OPTIONS_BUTTON_LOAD_SONG" Content="Load Song" HorizontalAlignment="Left" Margin="744,40,0,0" VerticalAlignment="Top" Width="229" Height="38" Click="OPTIONS_BUTTON_LOAD_SONG_Click"/>
+                </Grid>
             </TabItem>
         </TabControl>
 

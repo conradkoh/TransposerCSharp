@@ -11,7 +11,7 @@ namespace Transposer_Lib
         List<Song> songList = new List<Song>();
         List<string> songFiles = new List<string>();
         File playlistFile = new File();
-        public const string playlistDIR = ".\\Playlists";
+        public static string playlistDIR = System.IO.Directory.GetCurrentDirectory() + "\\Playlists";
         public Playlist()
         {
             playlistFile.Load(playlistDIR + "\\" + "default.slist");
@@ -21,6 +21,7 @@ namespace Transposer_Lib
         public Playlist(string filename) 
         {
             playlistFile.Load(filename);
+            playlistFile.SetDirectory(playlistDIR);
             //playlistFile.SetDirectory(playlistDIR);
             //string dbg = playlistFile.GetFilePath();
             //playlistFile.Save();

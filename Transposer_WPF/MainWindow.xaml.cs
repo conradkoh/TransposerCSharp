@@ -68,16 +68,6 @@ namespace Transposer_WPF
             e.Effects = DragDropEffects.All;
         }
 
-        private void MAIN_BUTTON_LOAD_SONG_Click(object sender, RoutedEventArgs e)
-        {
-            Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
-            dialog.InitialDirectory = System.IO.Directory.GetCurrentDirectory();
-            dialog.ShowDialog();
-            string filename = dialog.FileName;
-            Song mySong = new Song(filename);
-            DISPLAY_MAIN.Text = mySong.ToString();
-        }
-
         private void OPTIONS_BUTTON_LOAD_PLAYLIST_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
@@ -85,6 +75,16 @@ namespace Transposer_WPF
             string filename = dialog.FileName;
             transposer.LoadPlaylist(filename);
             UpdateDisplays();
+        }
+
+        private void OPTIONS_BUTTON_LOAD_SONG_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
+            dialog.InitialDirectory = System.IO.Directory.GetCurrentDirectory();
+            dialog.ShowDialog();
+            string filename = dialog.FileName;
+            Song mySong = new Song(filename);
+            DISPLAY_MAIN.Text = mySong.ToString();
         }
     }
 }
