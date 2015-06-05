@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Transposer_Lib;
 namespace Transposer_UnitTest
@@ -65,6 +69,80 @@ namespace Transposer_UnitTest
             input = -71;
             expected = -1;
             actual = input % 7;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void FILETEST()
+        {
+            File file = new File();
+            file.Load("file.txt");
+            string input;
+            string input2;
+            string input3;
+            string expected;
+            string actual;
+            List<string> setContent = new List<string>();
+            List<string> fileContent = new List<string>();
+            
+            //Testing the partition with one input line
+            input = "this is a test input";
+            expected = "this is a test input";
+            file.SetFileContent(input);
+            fileContent.Clear();
+            fileContent = file.GetFileContent();
+            actual = fileContent.First();
+            Assert.AreEqual(expected, actual);
+
+            //Testing the partition with 3 input lines
+            input = "this is a test input";
+            input2 = "this is a test input2";
+            input3 = "this is a test input3";
+            expected = "this is a test input\nthis is a test input2\nthis is a test input3";
+            setContent.Clear();
+            setContent = new List<string>();
+            setContent.Add(input);
+            setContent.Add(input2);
+            setContent.Add(input3);
+
+            file.SetFileContent(setContent);
+            fileContent = file.GetFileContent();
+            actual = string.Join("\n", fileContent);
+            Assert.AreEqual(expected, actual);
+
+            //Testing using a foreach loop to interate and add
+            string[] inputArr = new string[3];
+            inputArr[0] = "line 1";
+            inputArr[1] = "line 2";
+            inputArr[2] = "line 3";
+            setContent.Clear();
+            foreach (string line in inputArr)
+            {
+                setContent.Add(line);
+            }
+            file.SetFileContent(setContent);
+            file.Save();
+            fileContent = file.GetFileContent();
+            actual = string.Join("\n", fileContent);
+            expected = "line 1\nline 2\nline 3";
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+
+        public void SONG_CLASS()
+        {
+            Song song;
+            string[] filenames = new string[10];
+            string input;
+            string actual;
+            string expected;
+
+            filenames[0] = "a.txt";
+            song = new Song(filenames[0]);
+            actual = song.GetTitle();
+            expected = "a";
             Assert.AreEqual(expected, actual);
         }
     }

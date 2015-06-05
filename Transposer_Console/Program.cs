@@ -10,7 +10,8 @@ namespace Transposer_Console
     {
         static void Main(string[] args)
         {
-            File file = new File(".\\New Folder\\a.txt");
+            File file = new File();
+            file.Load(".\\New Folder\\a.txt");
             string songline = "A B C D";
             List<string> fileContent = new List<string>();
             fileContent.Add(songline);

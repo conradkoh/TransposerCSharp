@@ -6,21 +6,24 @@ using System.Threading.Tasks;
 
 namespace Transposer_Lib
 {
-    class Playlist
+    public class Playlist
     {
         List<Song> songList = new List<Song>();
         List<string> songFiles = new List<string>();
-        File playlistFile;
-        const string playlistDIR = ".\\Playlists";
+        File playlistFile = new File();
+        public const string playlistDIR = ".\\Playlists";
         public Playlist()
         {
-            playlistFile = new File(playlistDIR + "\\" + "default.slist");
+            playlistFile.Load(playlistDIR + "\\" + "default.slist");
             songFiles = playlistFile.GetFileContent();
             LoadFromList(songFiles);
         }
         public Playlist(string filename) 
         {
-            playlistFile = new File(filename);
+            playlistFile.Load(filename);
+            //playlistFile.SetDirectory(playlistDIR);
+            //string dbg = playlistFile.GetFilePath();
+            //playlistFile.Save();
             songFiles = playlistFile.GetFileContent();
             LoadFromList(songFiles);
         }
@@ -39,22 +42,26 @@ namespace Transposer_Lib
             songFiles.Clear();
         }
 
-        public override string ToString()
+        public string GetPlaylist()
         {
-            List<string> songTitles = new List<string>();
-            foreach (Song song in songList)
-            {
-                string currentSongTitle = song.GetTitle();
-                songTitles.Add(currentSongTitle);
-            }
-
-            string output = String.Join("\n", songTitles);
-            return output;
+            List<string> output = playlistFile.GetFileContent();
+            string result = String.Join(System.Environment.NewLine, output);
+            return result;
         }
 
         public string GetFileName()
         {
             return playlistFile.GetFileName();
+        }
+
+        public int Count()
+        {
+            return songList.Count();
+        }
+
+        public Song FirstSong()
+        {
+            return songList.First();
         }
     }
 }

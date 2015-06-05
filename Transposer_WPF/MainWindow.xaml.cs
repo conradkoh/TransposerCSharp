@@ -24,6 +24,8 @@ namespace Transposer_WPF
         public MainWindow()
         {
             InitializeComponent();
+            MaintainDirectories();
+            UpdateDisplays();
         }
 
         private void BUTTON_TRANSPOSE_UP_Click(object sender, RoutedEventArgs e)
@@ -31,14 +33,52 @@ namespace Transposer_WPF
             transposer.TransposeUp();
             UpdateDisplays();
         }
+        private void MaintainDirectories()
+        {
+            string songDIR = Song.songDIR;
+            string playlistDIR = Playlist.playlistDIR;
+            string systemDIR = Transposer.systemDIR;
+            System.IO.Directory.CreateDirectory(songDIR);
+            System.IO.Directory.CreateDirectory(playlistDIR);
+            System.IO.Directory.CreateDirectory(systemDIR);
 
+        }
         private void UpdateDisplays()
         {
             DISPLAY_MAIN.Text = transposer.DISPLAY_MAIN;
             DISPLAY_PLAYLIST.Text = transposer.DISPLAY_PLAYLIST;
         }
 
-        private void OPTIONS_BUTTON_LOAD_SONGLIST_Click(object sender, RoutedEventArgs e)
+        private void GRID_TABCONTROL_Drop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                foreach (string file in files)
+                {
+                    DISPLAY_FEEDBACK.Text = file;
+                    transposer.LoadPlaylist(file);
+                }
+                
+            }
+        }
+
+        private void GRID_TABCONTROL_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effects = DragDropEffects.All;
+        }
+
+        private void MAIN_BUTTON_LOAD_SONG_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
+            dialog.InitialDirectory = System.IO.Directory.GetCurrentDirectory();
+            dialog.ShowDialog();
+            string filename = dialog.FileName;
+            Song mySong = new Song(filename);
+            DISPLAY_MAIN.Text = mySong.ToString();
+        }
+
+        private void OPTIONS_BUTTON_LOAD_PLAYLIST_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
             dialog.ShowDialog();
