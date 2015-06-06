@@ -89,7 +89,7 @@ namespace Transposer_Lib
         }
         public void SetFileContent(List<string> fileContent)
         {
-            _fileContent = fileContent;
+            _fileContent = new List<string>(fileContent);
         }
         public void SetFileContent(string fileContent)
         {

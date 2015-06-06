@@ -18,6 +18,7 @@ namespace Transposer_Lib
 
         File songFile = new File();
         List<string> songLines;
+        string expectedFilePath;
         
         public Song(string fileName)
         {
@@ -26,6 +27,7 @@ namespace Transposer_Lib
             songFile.SetDirectory(songDIR);
             songFile.Save();
             songLines = songFile.GetFileContent();
+            expectedFilePath = songFile.GetFilePath();
         }
         private static void Initialize()
         {
@@ -62,31 +64,40 @@ namespace Transposer_Lib
         }
         public void TransposeUp()
         {
+            //transpose file content
             List<string> newSongLines = new List<string>();
             foreach (string line in songLines)
             {
                 string transposedLine = TransposeLine(line, 1);
                 newSongLines.Add(transposedLine);
             }
-
             songLines = newSongLines;
+
+            //transpose file name
+            expectedFilePath = TransposeBracketed(expectedFilePath, 1);
+
+            return;
         }
         public void TransposeDown()
         {
+            //transpose file content
             List<string> newSongLines = new List<string>();
             foreach (string line in songLines)
             {
                 string transposedLine = TransposeLine(line, -1);
                 newSongLines.Add(transposedLine);
             }
-
             songLines = newSongLines;
+
+            //transpose file name
+            expectedFilePath = TransposeBracketed(expectedFilePath, -1);
+
             return;
         }
         public override string ToString()
         {
             string result = songFile.GetFileName() + System.Environment.NewLine;
-            result += songFile.GetFilePath() + System.Environment.NewLine;
+            //result += songFile.GetFilePath() + System.Environment.NewLine;
             result = result + String.Join(System.Environment.NewLine, songLines);
             return result;
         }
@@ -103,10 +114,24 @@ namespace Transposer_Lib
             }
             return title;
         }
-
+        public string GetFileName()
+        {
+            return songFile.GetFileName();
+        }
+        public string GetFilePath()
+        {
+            return songFile.GetFilePath();
+        }
         public string GetSongDirectory()
         {
             return songDIR;
+        }
+
+        public void SaveTransposed()
+        {
+            songFile.SetFilePath(expectedFilePath);
+            songFile.SetFileContent(songLines);
+            songFile.Save();
         }
 
         //=========================================================
@@ -332,6 +357,30 @@ namespace Transposer_Lib
 
             return validityCheck;
             
+            
+        }
+        
+        //==========================================================
+        //Transposer Specific Methods
+        //=========================================================
+
+        private static string TransposeBracketed(string input, int offset){
+            int startIdx = input.LastIndexOfAny("([{".ToCharArray());
+            int endIdx = input.LastIndexOfAny(")]}".ToCharArray());
+            string prefix;
+            string suffix;
+            string output = input;
+            if (startIdx != -1 && endIdx != -1)
+            {
+                prefix = input.Substring(0, startIdx);
+                suffix = input.Substring(endIdx + 1, input.Length - endIdx - 1);
+                string content = input.Substring(startIdx + 1, endIdx - startIdx - 1);
+                content = TransposeLine(content, offset);
+
+                output = prefix + "[" + content + "]" + suffix;
+            }
+
+            return output;
             
         }
     }

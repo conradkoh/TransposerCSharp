@@ -20,11 +20,12 @@ namespace Transposer_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        Transposer transposer = new Transposer();
+        Transposer transposer;
         public MainWindow()
         {
             InitializeComponent();
             MaintainDirectories();
+            transposer = new Transposer();
             UpdateDisplays();
         }
 
@@ -56,7 +57,6 @@ namespace Transposer_WPF
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
                 foreach (string file in files)
                 {
-                    DISPLAY_FEEDBACK.Text = file;
                     transposer.LoadPlaylist(file);
                 }
                 
@@ -71,21 +71,28 @@ namespace Transposer_WPF
         private void OPTIONS_BUTTON_LOAD_PLAYLIST_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
-            dialog.ShowDialog();
-            string filename = dialog.FileName;
-            transposer.LoadPlaylist(filename);
-            UpdateDisplays();
-            TABCONTROL_MAIN.SelectedItem = TABCONTROL_MAIN_TAB_MAIN;
+            if (dialog.ShowDialog() == true)
+            {
+                string filename = dialog.FileName;
+                transposer.LoadPlaylist(filename);
+                UpdateDisplays();
+                TABCONTROL_MAIN.SelectedItem = TABCONTROL_MAIN_TAB_MAIN;
+            }
+            
+            
         }
 
         private void OPTIONS_BUTTON_LOAD_SONG_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
             dialog.InitialDirectory = System.IO.Directory.GetCurrentDirectory();
-            dialog.ShowDialog();
-            string filename = dialog.FileName;
-            Song mySong = new Song(filename);
-            DISPLAY_MAIN.Text = mySong.ToString();
+            if (dialog.ShowDialog() == true)
+            {
+                string filename = dialog.FileName;
+                Song mySong = new Song(filename);
+                DISPLAY_MAIN.Text = mySong.ToString();
+            }
+            
         }
 
         private void BUTTON_TRANSPOSE_DOWN_Click(object sender, RoutedEventArgs e)
@@ -118,5 +125,59 @@ namespace Transposer_WPF
             transposer.Previous();
             UpdateDisplays();
         }
+
+        private void MAIN_BUTTON_EDIT_SONG_Click(object sender, RoutedEventArgs e)
+        {
+            try { System.Diagnostics.Process.Start(transposer.GetCurrentSongFilePath()); }
+            catch { }
+            
+        }
+
+        private void MAIN_BUTTON_SAVE_STATE_Click(object sender, RoutedEventArgs e)
+        {
+            transposer.SaveState();
+            UpdateDisplays();
+        }
+
+        private void OPTIONS_BUTTON_PLAYLIST_DIRECTORY_Click(object sender, RoutedEventArgs e)
+        {
+            try { System.Diagnostics.Process.Start(Playlist.playlistDIR); }
+            catch { }
+        }
+
+        private void OPTIONS_BUTTON_SONG_DIRECTORY_Click(object sender, RoutedEventArgs e)
+        {
+            try { System.Diagnostics.Process.Start(Song.songDIR); }
+            catch { }
+
+            
+        }
+
+        private void BUTTON_HOME_Click(object sender, RoutedEventArgs e)
+        {
+            TABCONTROL_MAIN.SelectedItem = TABCONTROL_MAIN_TAB_MAIN;
+        }
+
+        private void OPTIONS_BUTTON_CREATE_PLAYLIST_Click(object sender, RoutedEventArgs e)
+        {
+            OPTIONS_TEXTBOX_INPUT.Text = "";
+            OPTIONS_CREATEPLAYLIST_MESSAGEBOX.Visibility = System.Windows.Visibility.Visible;
+            
+        }
+
+        private void OPTIONS_BUTTON_CANCEL_Click(object sender, RoutedEventArgs e)
+        {
+            OPTIONS_CREATEPLAYLIST_MESSAGEBOX.Visibility = System.Windows.Visibility.Hidden;
+            
+        }
+
+        private void OPTIONS_BUTTON_ACCEPT_Click(object sender, RoutedEventArgs e)
+        {
+            transposer.CreateNewPlaylist(OPTIONS_TEXTBOX_INPUT.Text);
+            OPTIONS_CREATEPLAYLIST_MESSAGEBOX.Visibility = System.Windows.Visibility.Hidden;
+            UpdateDisplays();
+
+        }
+
     }
 }

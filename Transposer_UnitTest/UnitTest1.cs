@@ -184,5 +184,13 @@ namespace Transposer_UnitTest
             expected = "a";
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void PLAYLIST_CLASS()
+        {
+            Playlist playlist = new Playlist("a.slist");
+            Assert.AreEqual(0, playlist.Count());
+            Assert.AreEqual("a.slist", playlist.GetFileName());
+        }
     }
 }

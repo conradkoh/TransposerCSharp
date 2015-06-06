@@ -9,13 +9,12 @@ namespace Transposer_Lib
     public class Playlist
     {
         List<Song> songList = new List<Song>();
-        List<string> songFiles = new List<string>();
         File playlistFile = new File();
         public static string playlistDIR = System.IO.Directory.GetCurrentDirectory() + "\\Playlists";
         public Playlist()
         {
             playlistFile.Load(playlistDIR + "\\" + "default.slist");
-            songFiles = playlistFile.GetFileContent();
+            List<string> songFiles = playlistFile.GetFileContent();
             LoadFromList(songFiles);
         }
         public Playlist(string filename) 
@@ -23,7 +22,7 @@ namespace Transposer_Lib
             playlistFile.Load(filename);
             playlistFile.SetDirectory(playlistDIR);
             playlistFile.Save();
-            songFiles = playlistFile.GetFileContent();
+            List<string> songFiles = playlistFile.GetFileContent();
             LoadFromList(songFiles);
         }
 
@@ -38,7 +37,6 @@ namespace Transposer_Lib
         private void ClearLists()
         {
             songList.Clear();
-            songFiles.Clear();
         }
 
         public string GetPlaylist()
@@ -58,6 +56,24 @@ namespace Transposer_Lib
             return songList.Count();
         }
 
+        public Song GetSong(int index)
+        {
+            Song song;
+            if (index >= 0 && index < songList.Count())
+            {
+                song = songList[index];
+            }
+            else if(songList.Count() != 0)
+            {
+                song = songList.First();
+            }
+            else
+            {
+                song = new Song("default.txt");
+            }
+
+            return song;
+        }
         public Song FirstSong()
         {
             if (!(songList.Count() == 0))
@@ -67,6 +83,19 @@ namespace Transposer_Lib
 
             return new Song("default.txt");
            
+        }
+        public void SaveState()
+        {
+            List<string> songFiles = new List<string>();
+            foreach (Song song in songList)
+            {
+                song.SaveTransposed();
+                string currentFileName = song.GetFileName();
+                songFiles.Add(currentFileName);
+            }
+
+            playlistFile.SetFileContent(songFiles);
+            playlistFile.Save();
         }
     }
 }

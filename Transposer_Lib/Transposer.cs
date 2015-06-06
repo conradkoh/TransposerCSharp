@@ -33,12 +33,15 @@ namespace Transposer_Lib
             string activePlaylist = fileContent.FirstOrDefault();
             if (activePlaylist != null)
             {
-                currentPlaylist = new Playlist(activePlaylist);
+                currentPlaylist = new Playlist(Playlist.playlistDIR + "\\" + activePlaylist);
                 currentSong = currentPlaylist.FirstSong();
             }
+            else
+            {
+                currentPlaylist = new Playlist(songLibraryPath);
+            }
             library = new Playlist(songLibraryPath);
-            
-
+            UpdateDisplays();
         }
 
         public void TransposeUp()
@@ -71,6 +74,8 @@ namespace Transposer_Lib
             try
             {
                 currentIdx = (currentIdx + 1 + currentPlaylist.Count()) % currentPlaylist.Count();
+                currentSong = currentPlaylist.GetSong(currentIdx);
+                UpdateDisplays();
             }
             catch
             {
@@ -84,6 +89,8 @@ namespace Transposer_Lib
             try
             {
                 currentIdx = (currentIdx - 1 + currentPlaylist.Count()) % currentPlaylist.Count();
+                currentSong = currentPlaylist.GetSong(currentIdx);
+                UpdateDisplays();
             }
             catch
             {
@@ -97,6 +104,7 @@ namespace Transposer_Lib
             currentPlaylist = new Playlist(playlistFileName);
             currentSong = currentPlaylist.FirstSong();
             UpdateDisplays();
+            UpdateSystemFile();
         }
 
         private void UpdateSystemFile()
@@ -107,14 +115,34 @@ namespace Transposer_Lib
 
         private void UpdateDisplays()
         {
-            DISPLAY_PLAYLIST = currentPlaylist.GetPlaylist();
-            DISPLAY_MAIN = currentSong.ToString();
+            try
+            {
+                DISPLAY_PLAYLIST = currentPlaylist.GetPlaylist();
+                DISPLAY_MAIN = currentSong.ToString();
+            }
+            catch (Exception e) { }
+            
         }
 
         public string GetPlaylistFilePath()
         {
             string output = Playlist.playlistDIR + "\\" + currentPlaylist.GetFileName();
             return output;
+        }
+        public string GetCurrentSongFilePath()
+        {
+            return currentSong.GetFilePath();
+        }
+        public void SaveState()
+        {
+            currentPlaylist.SaveState();
+            UpdateDisplays();
+        }
+
+        public void CreateNewPlaylist(string fileName)
+        {
+            currentPlaylist = new Playlist(Playlist.playlistDIR + "\\" + fileName);
+            UpdateSystemFile();
         }
     }
 }
