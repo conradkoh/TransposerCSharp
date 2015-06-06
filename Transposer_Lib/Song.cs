@@ -24,7 +24,7 @@ namespace Transposer_Lib
             Initialize();
             songFile.Load(fileName);
             songFile.SetDirectory(songDIR);
-            songFile.Save();
+ //           songFile.Save();
             songLines = songFile.GetFileContent();
         }
         private static void Initialize()

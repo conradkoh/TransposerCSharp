@@ -22,9 +22,7 @@ namespace Transposer_Lib
         {
             playlistFile.Load(filename);
             playlistFile.SetDirectory(playlistDIR);
-            //playlistFile.SetDirectory(playlistDIR);
-            //string dbg = playlistFile.GetFilePath();
-            //playlistFile.Save();
+            playlistFile.Save();
             songFiles = playlistFile.GetFileContent();
             LoadFromList(songFiles);
         }
@@ -32,7 +30,7 @@ namespace Transposer_Lib
         private void LoadFromList(List<string> songFileNames)
         {
             foreach(string fileName in songFileNames){
-                Song currentSong = new Song(fileName);
+                Song currentSong = new Song(Song.songDIR + "\\" + fileName);
                 songList.Add(currentSong);
             }
         }

@@ -44,6 +44,7 @@ namespace Transposer_Lib
             try
             {
                 SetFilePath(filePath);
+                _fileContent.Clear();
                 System.IO.StreamReader file = new System.IO.StreamReader(filePath);
                 string line;
                 do
@@ -83,7 +84,7 @@ namespace Transposer_Lib
         }
         public List<string> GetFileContent()
         {
-            return _fileContent;
+            return new List<string>(_fileContent);
         }
         public void SetFileContent(List<string> fileContent)
         {
@@ -106,8 +107,15 @@ namespace Transposer_Lib
             {
 
             }
-            
-            string fileName = new System.IO.FileInfo(filePath).Name;
+            string fileName = "unknown.file";
+            //try
+            //{
+                fileName = new System.IO.FileInfo(filePath).Name;
+            //}
+            //catch (Exception e)
+            //{
+
+            //}
             _filePath = fileDirectory + _SEPARATOR + fileName;
         }
         public void SetDirectory(string directory)
@@ -115,6 +123,14 @@ namespace Transposer_Lib
             string fileName = new System.IO.FileInfo(_filePath).Name;
             System.IO.Directory.CreateDirectory(directory);
             _filePath = directory + _SEPARATOR + fileName;
+        }
+
+        public void SetRelativeSubDirectory(string directory)
+        {
+            string currentDirectory = System.IO.Directory.GetCurrentDirectory();
+            string resultantDirectory = currentDirectory + _SEPARATOR + directory + _SEPARATOR;
+            string filename = new System.IO.FileInfo(_filePath).Name;
+            _filePath = resultantDirectory + filename;
         }
         public void SetFileName(string filename)
         {

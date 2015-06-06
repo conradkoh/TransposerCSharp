@@ -127,6 +127,45 @@ namespace Transposer_UnitTest
             expected = "line 1\nline 2\nline 3";
             Assert.AreEqual(expected, actual);
 
+            //Testing the save method
+            file.Load("file.txt");
+            file.Save();
+            file.Load("file.txt");
+            fileContent = file.GetFileContent();
+            List<string> actualFileContent = new List<string>();
+            actualFileContent.Add("line 1");
+            actualFileContent.Add("line 2");
+            actualFileContent.Add("line 3");
+            actual = String.Join(System.Environment.NewLine, actualFileContent);;
+            expected = String.Join(System.Environment.NewLine, fileContent);
+            Assert.AreEqual(expected, actual);
+
+            //Testing the set directory method, check original file
+            file.Load("file.txt");
+            file.SetDirectory(".\\Test Directory");
+            file.Save();
+            file.Load("file.txt");
+            fileContent = file.GetFileContent();
+            actualFileContent = new List<string>();
+            actualFileContent.Add("line 1");
+            actualFileContent.Add("line 2");
+            actualFileContent.Add("line 3");
+            actual = String.Join(System.Environment.NewLine, actualFileContent); ;
+            expected = String.Join(System.Environment.NewLine, fileContent);
+            Assert.AreEqual(expected, actual);
+
+            //Testing the set directory method, check new file;
+            file.Load("file.txt");
+            fileContent = file.GetFileContent();
+            file.Load(".\\Test Directory\\file.txt");
+            actualFileContent = file.GetFileContent();
+            actual = String.Join(System.Environment.NewLine, fileContent);
+            expected = String.Join(System.Environment.NewLine, actualFileContent);
+            Assert.AreEqual(expected, actual);
+
+
+
+
         }
 
         [TestMethod]
