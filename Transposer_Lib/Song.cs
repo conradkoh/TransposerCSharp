@@ -24,7 +24,7 @@ namespace Transposer_Lib
             Initialize();
             songFile.Load(fileName);
             songFile.SetDirectory(songDIR);
- //           songFile.Save();
+            songFile.Save();
             songLines = songFile.GetFileContent();
         }
         private static void Initialize()
@@ -77,7 +77,7 @@ namespace Transposer_Lib
             foreach (string line in songLines)
             {
                 string transposedLine = TransposeLine(line, -1);
-                newSongLines.Add(line);
+                newSongLines.Add(transposedLine);
             }
 
             songLines = newSongLines;

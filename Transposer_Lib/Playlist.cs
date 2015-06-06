@@ -60,7 +60,13 @@ namespace Transposer_Lib
 
         public Song FirstSong()
         {
-            return songList.First();
+            if (!(songList.Count() == 0))
+            {
+                return songList.First();
+            }
+
+            return new Song("default.txt");
+           
         }
     }
 }

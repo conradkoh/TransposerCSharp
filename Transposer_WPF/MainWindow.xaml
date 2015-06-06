@@ -12,9 +12,12 @@
                 <Grid x:Name="GRID_TABCONTROL" Background="#FFE5E5E5" Drop="GRID_TABCONTROL_Drop" DragOver="GRID_TABCONTROL_DragOver" AllowDrop="True">
                     <TextBox x:Name="DISPLAY_MAIN" HorizontalAlignment="Left" Height="557" Margin="7,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="713" IsReadOnly="True" IsReadOnlyCaretVisible="True"/>
                     <Button x:Name="BUTTON_TRANSPOSE_UP" Content="Transpose Up" HorizontalAlignment="Left" Margin="730,10,0,0" VerticalAlignment="Top" Width="118" Height="119" Background="#FFCFC9C9" Click="BUTTON_TRANSPOSE_UP_Click"/>
-                    <Button x:Name="BUTTON_TRANSPOSE_DOWN" Content="Transpose Down" HorizontalAlignment="Left" Margin="734,142,0,0" VerticalAlignment="Top" Width="111" Height="119"/>
+                    <Button x:Name="BUTTON_TRANSPOSE_DOWN" Content="Transpose Down" HorizontalAlignment="Left" Margin="734,142,0,0" VerticalAlignment="Top" Width="111" Height="119" Click="BUTTON_TRANSPOSE_DOWN_Click"/>
                     <TextBox x:Name="DISPLAY_PLAYLIST" HorizontalAlignment="Left" Height="233" Margin="735,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237"/>
                     <TextBox x:Name="DISPLAY_FEEDBACK" HorizontalAlignment="Left" Height="23" Margin="18,591,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="939"/>
+                    <Button x:Name="MAIN_BUTTON_NEXT" Content="Next" HorizontalAlignment="Left" Margin="871,16,0,0" VerticalAlignment="Top" Width="113" Height="118" Click="MAIN_BUTTON_NEXT_Click"/>
+                    <Button x:Name="MAIN_BUTTON_PREVIOUS" Content="Previous" HorizontalAlignment="Left" Margin="869,158,0,0" VerticalAlignment="Top" Width="113" Height="107" Background="#FFDDDDDD" Click="MAIN_BUTTON_PREVIOUS_Click"/>
+                    <Button x:Name="MAIN_BUTTON_EDIT_PLAYLIST" Content="Edit Playlist" HorizontalAlignment="Left" Margin="745,291,0,0" VerticalAlignment="Top" Width="229" Click="MAIN_BUTTON_EDIT_PLAYLIST_Click"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="TABCONTROL_MAIN_TAB_OPTIONS" Header="Options">

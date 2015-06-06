@@ -75,6 +75,7 @@ namespace Transposer_WPF
             string filename = dialog.FileName;
             transposer.LoadPlaylist(filename);
             UpdateDisplays();
+            TABCONTROL_MAIN.SelectedItem = TABCONTROL_MAIN_TAB_MAIN;
         }
 
         private void OPTIONS_BUTTON_LOAD_SONG_Click(object sender, RoutedEventArgs e)
@@ -85,6 +86,37 @@ namespace Transposer_WPF
             string filename = dialog.FileName;
             Song mySong = new Song(filename);
             DISPLAY_MAIN.Text = mySong.ToString();
+        }
+
+        private void BUTTON_TRANSPOSE_DOWN_Click(object sender, RoutedEventArgs e)
+        {
+            transposer.TransposeDown();
+            UpdateDisplays();
+        }
+
+        private void MAIN_BUTTON_EDIT_PLAYLIST_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(transposer.GetPlaylistFilePath());
+            }
+            catch (Exception except)
+            {
+
+            }
+            
+        }
+
+        private void MAIN_BUTTON_NEXT_Click(object sender, RoutedEventArgs e)
+        {
+            transposer.Next();
+            UpdateDisplays();
+        }
+
+        private void MAIN_BUTTON_PREVIOUS_Click(object sender, RoutedEventArgs e)
+        {
+            transposer.Previous();
+            UpdateDisplays();
         }
     }
 }

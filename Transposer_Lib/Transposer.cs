@@ -43,32 +43,53 @@ namespace Transposer_Lib
 
         public void TransposeUp()
         {
-            if (currentSong != null)
-            {
+            try{
                 currentSong.TransposeUp();
                 DISPLAY_MAIN = currentSong.ToString();
+            }
+            catch{
+
             }
             
         }
 
         public void TransposeDown()
         {
-            if (currentSong != null)
+            try
             {
                 currentSong.TransposeDown();
                 DISPLAY_MAIN = currentSong.ToString();
             }
-            
+            catch
+            {
+
+            }
         }
 
         public void Next()
         {
-            currentIdx = (currentIdx + 1 + currentPlaylist.Count())%currentPlaylist.Count();
+            try
+            {
+                currentIdx = (currentIdx + 1 + currentPlaylist.Count()) % currentPlaylist.Count();
+            }
+            catch
+            {
+
+            }
+            
         }
 
         public void Previous()
         {
-            currentIdx = (currentIdx - 1 + currentPlaylist.Count()) % currentPlaylist.Count();
+            try
+            {
+                currentIdx = (currentIdx - 1 + currentPlaylist.Count()) % currentPlaylist.Count();
+            }
+            catch
+            {
+
+            }
+            
         }
 
         public void LoadPlaylist(string playlistFileName)
@@ -88,6 +109,12 @@ namespace Transposer_Lib
         {
             DISPLAY_PLAYLIST = currentPlaylist.GetPlaylist();
             DISPLAY_MAIN = currentSong.ToString();
+        }
+
+        public string GetPlaylistFilePath()
+        {
+            string output = Playlist.playlistDIR + "\\" + currentPlaylist.GetFileName();
+            return output;
         }
     }
 }

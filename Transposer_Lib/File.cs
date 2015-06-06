@@ -82,6 +82,7 @@ namespace Transposer_Lib
         {
             return _filePath;
         }
+
         public List<string> GetFileContent()
         {
             return new List<string>(_fileContent);
