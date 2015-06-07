@@ -96,7 +96,9 @@ namespace Transposer_Lib
         }
         public override string ToString()
         {
-            string result = songFile.GetFileName() + System.Environment.NewLine;
+            string result = new System.IO.FileInfo(expectedFilePath).Name;
+            result = System.IO.Path.GetFileNameWithoutExtension(result) + System.Environment.NewLine;
+            //string result = songFile.GetFileName() + System.Environment.NewLine;
             //result += songFile.GetFilePath() + System.Environment.NewLine;
             result = result + String.Join(System.Environment.NewLine, songLines);
             return result;

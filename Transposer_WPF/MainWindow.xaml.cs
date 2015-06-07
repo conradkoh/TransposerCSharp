@@ -48,24 +48,9 @@ namespace Transposer_WPF
         {
             DISPLAY_MAIN.Text = transposer.DISPLAY_MAIN;
             DISPLAY_PLAYLIST.Text = transposer.DISPLAY_PLAYLIST;
-        }
-
-        private void GRID_TABCONTROL_Drop(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
-                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-                foreach (string file in files)
-                {
-                    transposer.LoadPlaylist(file);
-                }
-                
-            }
-        }
-
-        private void GRID_TABCONTROL_DragOver(object sender, DragEventArgs e)
-        {
-            e.Effects = DragDropEffects.All;
+            OPTIONS_DISPLAY_PLAYLIST.Text = transposer.DISPLAY_PLAYLIST;
+            
+            
         }
 
         private void OPTIONS_BUTTON_LOAD_PLAYLIST_Click(object sender, RoutedEventArgs e)
@@ -79,19 +64,6 @@ namespace Transposer_WPF
                 TABCONTROL_MAIN.SelectedItem = TABCONTROL_MAIN_TAB_MAIN;
             }
             
-            
-        }
-
-        private void OPTIONS_BUTTON_LOAD_SONG_Click(object sender, RoutedEventArgs e)
-        {
-            Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
-            dialog.InitialDirectory = System.IO.Directory.GetCurrentDirectory();
-            if (dialog.ShowDialog() == true)
-            {
-                string filename = dialog.FileName;
-                Song mySong = new Song(filename);
-                DISPLAY_MAIN.Text = mySong.ToString();
-            }
             
         }
 
@@ -158,26 +130,117 @@ namespace Transposer_WPF
             TABCONTROL_MAIN.SelectedItem = TABCONTROL_MAIN_TAB_MAIN;
         }
 
-        private void OPTIONS_BUTTON_CREATE_PLAYLIST_Click(object sender, RoutedEventArgs e)
-        {
-            OPTIONS_TEXTBOX_INPUT.Text = "";
-            OPTIONS_CREATEPLAYLIST_MESSAGEBOX.Visibility = System.Windows.Visibility.Visible;
-            
-        }
-
         private void OPTIONS_BUTTON_CANCEL_Click(object sender, RoutedEventArgs e)
         {
-            OPTIONS_CREATEPLAYLIST_MESSAGEBOX.Visibility = System.Windows.Visibility.Hidden;
+            OPTIONS_CREATE_FILE_MESSAGEBOX.Visibility = System.Windows.Visibility.Hidden;
             
         }
 
-        private void OPTIONS_BUTTON_ACCEPT_Click(object sender, RoutedEventArgs e)
+        private void OPTIONS_BUTTON_CREATE_PLAYLIST_Click(object sender, RoutedEventArgs e)
         {
-            transposer.CreateNewPlaylist(OPTIONS_TEXTBOX_INPUT.Text);
-            OPTIONS_CREATEPLAYLIST_MESSAGEBOX.Visibility = System.Windows.Visibility.Hidden;
-            UpdateDisplays();
+            if (OPTIONS_TEXTBOX_INPUT.Text != "")
+            {
+                string filePath = transposer.CreateNewPlaylist(OPTIONS_TEXTBOX_INPUT.Text);
+                OPTIONS_CREATE_FILE_MESSAGEBOX.Visibility = System.Windows.Visibility.Hidden;
+                UpdateDisplays();
+                System.Diagnostics.Process.Start(filePath);
+            }
+            
 
         }
+
+        private void BUTTON_RELOAD_Click(object sender, RoutedEventArgs e)
+        {
+            transposer.Reload();
+            UpdateDisplays();
+        }
+
+        private void OPTIONS_BUTTON_CREATE_SONG_Click(object sender, RoutedEventArgs e)
+        {
+            if (OPTIONS_TEXTBOX_INPUT.Text != "")
+            {
+                string fileName = OPTIONS_TEXTBOX_INPUT.Text;
+                string filePath = transposer.CreateSong(fileName);
+                OPTIONS_CREATE_FILE_MESSAGEBOX.Visibility = System.Windows.Visibility.Hidden;
+                UpdateDisplays();
+                System.Diagnostics.Process.Start(filePath);
+            }
+            
+        }
+
+        private void OPTIONS_BUTTON_CREATE_FILE_Click(object sender, RoutedEventArgs e)
+        {
+            OPTIONS_CREATE_FILE_MESSAGEBOX.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        private void OPTIONS_BUTTON_ADD_SONG_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
+            dialog.InitialDirectory = System.IO.Directory.GetCurrentDirectory();
+            if (dialog.ShowDialog() == true)
+            {
+                string filePath = dialog.FileName;
+                transposer.AddSong(filePath);
+                //Song mySong = new Song(filename);
+                //DISPLAY_MAIN.Text = mySong.ToString();
+                UpdateDisplays();
+                TABCONTROL_MAIN.SelectedItem = TABCONTROL_MAIN_TAB_MAIN;
+            }
+        }
+
+        private void DISPLAY_PLAYLIST_Drop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                foreach (string file in files)
+                {
+                    transposer.LoadPlaylist(file);
+                }
+                UpdateDisplays();
+
+            }
+        }
+
+        private void DISPLAY_MAIN_Drop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                foreach (string file in files)
+                {
+                    transposer.AddSong(file);
+                }
+                UpdateDisplays();
+
+            }
+        }
+
+        private void DISPLAY_MAIN_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effects = DragDropEffects.All;
+        }
+
+        private void DISPLAY_PLAYLIST_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effects = DragDropEffects.All;
+        }
+
+        private void OPTIONS_GRID_FILE_DROP(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                foreach (string file in files)
+                {
+                    transposer.AddSong(file);
+                }
+                UpdateDisplays();
+                TABCONTROL_MAIN.SelectedItem = TABCONTROL_MAIN_TAB_MAIN;
+
+            }
+        }
+
 
     }
 }

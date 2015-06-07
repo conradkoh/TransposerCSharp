@@ -74,6 +74,16 @@ namespace Transposer_Lib
 
             return song;
         }
+        public List<string> GetSongList()
+        {
+            List<string> output = new List<string>();
+            foreach (Song song in songList)
+            {
+                string songTitle = song.GetTitle();
+                output.Add(songTitle);
+            }
+            return output;
+        }
         public Song FirstSong()
         {
             if (!(songList.Count() == 0))
@@ -96,6 +106,13 @@ namespace Transposer_Lib
 
             playlistFile.SetFileContent(songFiles);
             playlistFile.Save();
+        }
+
+        public void AddSong(string filePath)
+        {
+            Song newSong = new Song(filePath);
+            songList.Add(newSong);
+            SaveState();
         }
     }
 }

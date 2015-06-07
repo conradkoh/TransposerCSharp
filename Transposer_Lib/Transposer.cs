@@ -27,6 +27,11 @@ namespace Transposer_Lib
         Song currentSong;
         public Transposer()
         {
+            Reload();
+        }
+
+        public void Reload()
+        {
             debugFile.Load(debugFilePath);
             sysFile.Load(systemFilePath);
             List<string> fileContent = sysFile.GetFileContent();
@@ -133,16 +138,47 @@ namespace Transposer_Lib
         {
             return currentSong.GetFilePath();
         }
+        public List<string> GetSongList()
+        {
+            return currentPlaylist.GetSongList();
+        }
         public void SaveState()
         {
             currentPlaylist.SaveState();
             UpdateDisplays();
         }
 
-        public void CreateNewPlaylist(string fileName)
+        public string CreateNewPlaylist(string fileName)
         {
-            currentPlaylist = new Playlist(Playlist.playlistDIR + "\\" + fileName);
+            string filePath = Playlist.playlistDIR + "\\" + fileName;
+            currentPlaylist = new Playlist(filePath);
             UpdateSystemFile();
+            UpdateDisplays();
+            DISPLAY_MAIN = "New playlist created. Drag and drop files here to add them to your playlist.";
+            return filePath;
+        }
+
+        public void AddSong(string filePath)
+        {
+            currentPlaylist.AddSong(filePath);
+            UpdateDisplays();
+        }
+
+        public string CreateSong(string fileName)
+        {
+            string filePath = Song.songDIR + "\\" + fileName;
+            if (!System.IO.File.Exists(filePath))
+            {
+                System.IO.FileStream file = System.IO.File.Create(filePath);
+                file.Close();
+                currentPlaylist.AddSong(filePath);
+            }
+            else
+            {
+                currentPlaylist.AddSong(filePath);
+            }
+            UpdateDisplays();
+            return filePath;
         }
     }
 }

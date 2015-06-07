@@ -1,8 +1,10 @@
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Debug\MainWindow.baml
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Debug\Transposer_WPF.csprojResolveAssemblyReference.cache
 C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\bin\Debug\Transposer_WPF.exe.config
 C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\bin\Debug\Transposer_WPF.exe
 C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\bin\Debug\Transposer_WPF.pdb
-C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Debug\Transposer_WPF.csprojResolveAssemblyReference.cache
-C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Debug\MainWindow.baml
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\bin\Debug\Transposer_Lib.dll
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\bin\Debug\Transposer_Lib.pdb
 C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Debug\MainWindow.g.cs
 C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Debug\App.g.cs
 C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Debug\Transposer_WPF_MarkupCompile.cache
@@ -11,5 +13,3 @@ C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transpos
 C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Debug\Transposer_WPF.csproj.GenerateResource.Cache
 C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Debug\Transposer_WPF.exe
 C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Debug\Transposer_WPF.pdb
-C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\bin\Debug\Transposer_Lib.dll
-C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\bin\Debug\Transposer_Lib.pdb
