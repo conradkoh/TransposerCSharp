@@ -39,7 +39,7 @@
                         <Button x:Name="OPTIONS_BUTTON_CANCEL" Content="Cancel" HorizontalAlignment="Left" Margin="236,117,0,0" VerticalAlignment="Top" Width="96" Height="26" IsCancel="True" Click="OPTIONS_BUTTON_CANCEL_Click"/>
                         <TextBox x:Name="OPTIONS_MESSAGEBOX_HEADER" HorizontalAlignment="Left" Height="23" Margin="-1,0,0,0" TextWrapping="Wrap" Text="Create File" VerticalAlignment="Top" Width="354" IsReadOnly="True" Background="#FFAEAEAE" BorderBrush="#FF0847FF" Foreground="Black"/>
                         <TextBlock HorizontalAlignment="Left" Margin="11,33,0,0" TextWrapping="Wrap" Text="Enter the file name of the file you want to create:" VerticalAlignment="Top" Width="290"/>
-                        <Button x:Name="OPTIONS_BUTTON_CREATE_SONG" Content="Create Song" HorizontalAlignment="Left" Margin="21,116,0,0" VerticalAlignment="Top" Width="96" Height="26" Click="OPTIONS_BUTTON_CREATE_SONG_Click"/>
+                        <Button x:Name="OPTIONS_BUTTON_CREATE_SONG" Content="Create Song" HorizontalAlignment="Left" Margin="21,117,0,0" VerticalAlignment="Top" Width="96" Height="26" Click="OPTIONS_BUTTON_CREATE_SONG_Click"/>
                     </Grid>
                     <Grid x:Name="OPTIONS_GRID_FILEDROP" HorizontalAlignment="Center" Height="180" Margin="387,315,268,0" VerticalAlignment="Top" Width="343" Background="#FFD5D5D5" Drop="OPTIONS_GRID_FILE_DROP" AllowDrop="True">
                         <TextBlock x:Name="GRID_FILE_DROP_LABEL" HorizontalAlignment="Center" Margin="95,76,94,0" TextWrapping="Wrap" Text="Drop songs here to load them." VerticalAlignment="Top" Width="154" Height="64" TextAlignment="Center"/>
