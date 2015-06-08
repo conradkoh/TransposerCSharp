@@ -133,6 +133,7 @@ namespace Transposer_WPF
         private void OPTIONS_BUTTON_CANCEL_Click(object sender, RoutedEventArgs e)
         {
             OPTIONS_CREATE_FILE_MESSAGEBOX.Visibility = System.Windows.Visibility.Hidden;
+            OPTIONS_TEXTBOX_INPUT.Text = "";
             
         }
 
@@ -144,6 +145,7 @@ namespace Transposer_WPF
                 OPTIONS_CREATE_FILE_MESSAGEBOX.Visibility = System.Windows.Visibility.Hidden;
                 UpdateDisplays();
                 System.Diagnostics.Process.Start(filePath);
+                OPTIONS_TEXTBOX_INPUT.Text = "";
             }
             
 
@@ -164,6 +166,7 @@ namespace Transposer_WPF
                 OPTIONS_CREATE_FILE_MESSAGEBOX.Visibility = System.Windows.Visibility.Hidden;
                 UpdateDisplays();
                 System.Diagnostics.Process.Start(filePath);
+                OPTIONS_TEXTBOX_INPUT.Text = "";
             }
             
         }
@@ -171,6 +174,7 @@ namespace Transposer_WPF
         private void OPTIONS_BUTTON_CREATE_FILE_Click(object sender, RoutedEventArgs e)
         {
             OPTIONS_CREATE_FILE_MESSAGEBOX.Visibility = System.Windows.Visibility.Visible;
+            OPTIONS_TEXTBOX_INPUT.Text = "";
         }
 
         private void OPTIONS_BUTTON_ADD_SONG_Click(object sender, RoutedEventArgs e)
