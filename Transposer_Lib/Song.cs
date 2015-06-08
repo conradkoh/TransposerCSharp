@@ -164,16 +164,23 @@ namespace Transposer_Lib
             string[] tokens = songLine.Split(null);
             bool shouldTranspose = true;
             int validChordCount = 0;
+            int whitespacecount = 0;
 
             foreach (string chord in tokens)
             {
                 if (IsValidChord(chord))
+                {   
+                     validChordCount++;
+                }
+                if (String.IsNullOrWhiteSpace(chord))
                 {
-                    validChordCount++;
+                    whitespacecount++;
                 }
             }
 
-            if (validChordCount < 2   && tokens.Count() > 6)
+            int tokenCount = tokens.Count() - whitespacecount;
+
+            if (validChordCount < 2   && tokenCount > 6)
             {
                 shouldTranspose = false;
             } 

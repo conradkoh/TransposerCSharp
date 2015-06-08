@@ -10,10 +10,10 @@
         <TabControl x:Name="TABCONTROL_MAIN" Grid.ColumnSpan="2" Margin="0,0,0,-0.2" SnapsToDevicePixels="True" ClipToBounds="True">
             <TabItem x:Name="TABCONTROL_MAIN_TAB_MAIN" Header="Main">
                 <Grid x:Name="GRID_TABCONTROL" Background="#FFE5E5E5" Margin="-3,0,-1.2,-1.6">
-                    <TextBox x:Name="DISPLAY_MAIN" Height="725" Margin="10,44,277,7.2" TextWrapping="Wrap" IsReadOnly="True" IsReadOnlyCaretVisible="True" Drop="DISPLAY_MAIN_Drop" DragEnter="DISPLAY_MAIN_DragEnter"/>
+                    <TextBox x:Name="DISPLAY_MAIN" Margin="10,44,277,19" TextWrapping="Wrap" IsReadOnly="True" IsReadOnlyCaretVisible="True" Drop="DISPLAY_MAIN_Drop" DragEnter="DISPLAY_MAIN_DragEnter"/>
                     <Button x:Name="BUTTON_TRANSPOSE_UP" Content="Transpose Up" HorizontalAlignment="Right" Margin="0,48,139,0" VerticalAlignment="Top" Width="120" Height="120" Background="#FFDDDDDD" Click="BUTTON_TRANSPOSE_UP_Click"/>
                     <Button x:Name="BUTTON_TRANSPOSE_DOWN" Content="Transpose Down" HorizontalAlignment="Right" Margin="0,169,139,0" VerticalAlignment="Top" Width="120" Height="120" Click="BUTTON_TRANSPOSE_DOWN_Click"/>
-                    <TextBox x:Name="DISPLAY_PLAYLIST" Margin="0,320,16,9" TextWrapping="Wrap" Width="241" HorizontalAlignment="Right" Drop="DISPLAY_PLAYLIST_Drop" DragEnter="DISPLAY_PLAYLIST_DragEnter" IsReadOnly="True"/>
+                    <TextBox x:Name="DISPLAY_PLAYLIST" Margin="0,320,16,20" TextWrapping="Wrap" Width="241" HorizontalAlignment="Right" Drop="DISPLAY_PLAYLIST_Drop" DragEnter="DISPLAY_PLAYLIST_DragEnter" IsReadOnly="True"/>
                     <Button x:Name="MAIN_BUTTON_NEXT" Content="Next" Margin="0,48,17,0" VerticalAlignment="Top" Width="120" Height="120" Click="MAIN_BUTTON_NEXT_Click" HorizontalAlignment="Right"/>
                     <Button x:Name="MAIN_BUTTON_PREVIOUS" Content="Previous" Margin="0,169,17,0" VerticalAlignment="Top" Width="120" Height="120" Background="#FFDDDDDD" Click="MAIN_BUTTON_PREVIOUS_Click" HorizontalAlignment="Right"/>
                     <Button x:Name="MAIN_BUTTON_EDIT_PLAYLIST" Content="Edit Playlist" Margin="0,294,15,0" VerticalAlignment="Top" Width="242" Click="MAIN_BUTTON_EDIT_PLAYLIST_Click" HorizontalAlignment="Right"/>
@@ -35,11 +35,11 @@
                             <DropShadowEffect BlurRadius="5" ShadowDepth="1.5"/>
                         </Grid.Effect>
                         <TextBox x:Name="OPTIONS_TEXTBOX_INPUT" HorizontalAlignment="Right" Height="23" Margin="0,56,6,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="338" Visibility="Visible"/>
-                        <Button x:Name="OPTIONS_BUTTON_CREATE_PLAYLIST" Content="Create Playlist" HorizontalAlignment="Left" Margin="141,104,0,0" VerticalAlignment="Top" Width="96" Height="26" Click="OPTIONS_BUTTON_CREATE_PLAYLIST_Click"/>
-                        <Button x:Name="OPTIONS_BUTTON_CANCEL" Content="Cancel" HorizontalAlignment="Left" Margin="247,104,0,0" VerticalAlignment="Top" Width="96" Height="26" IsCancel="True" Click="OPTIONS_BUTTON_CANCEL_Click"/>
+                        <Button x:Name="OPTIONS_BUTTON_CREATE_PLAYLIST" Content="Create Playlist" HorizontalAlignment="Left" Margin="129,117,0,0" VerticalAlignment="Top" Width="96" Height="26" Click="OPTIONS_BUTTON_CREATE_PLAYLIST_Click"/>
+                        <Button x:Name="OPTIONS_BUTTON_CANCEL" Content="Cancel" HorizontalAlignment="Left" Margin="236,117,0,0" VerticalAlignment="Top" Width="96" Height="26" IsCancel="True" Click="OPTIONS_BUTTON_CANCEL_Click"/>
                         <TextBox x:Name="OPTIONS_MESSAGEBOX_HEADER" HorizontalAlignment="Left" Height="23" Margin="-1,0,0,0" TextWrapping="Wrap" Text="Create File" VerticalAlignment="Top" Width="354" IsReadOnly="True" Background="#FFAEAEAE" BorderBrush="#FF0847FF" Foreground="Black"/>
                         <TextBlock HorizontalAlignment="Left" Margin="11,33,0,0" TextWrapping="Wrap" Text="Enter the file name of the file you want to create:" VerticalAlignment="Top" Width="290"/>
-                        <Button x:Name="OPTIONS_BUTTON_CREATE_SONG" Content="Create Song" HorizontalAlignment="Left" Margin="33,104,0,0" VerticalAlignment="Top" Width="96" Height="26" Click="OPTIONS_BUTTON_CREATE_SONG_Click"/>
+                        <Button x:Name="OPTIONS_BUTTON_CREATE_SONG" Content="Create Song" HorizontalAlignment="Left" Margin="21,116,0,0" VerticalAlignment="Top" Width="96" Height="26" Click="OPTIONS_BUTTON_CREATE_SONG_Click"/>
                     </Grid>
                     <Grid x:Name="OPTIONS_GRID_FILEDROP" HorizontalAlignment="Center" Height="180" Margin="387,315,268,0" VerticalAlignment="Top" Width="343" Background="#FFD5D5D5" Drop="OPTIONS_GRID_FILE_DROP" AllowDrop="True">
                         <TextBlock x:Name="GRID_FILE_DROP_LABEL" HorizontalAlignment="Center" Margin="95,76,94,0" TextWrapping="Wrap" Text="Drop songs here to load them." VerticalAlignment="Top" Width="154" Height="64" TextAlignment="Center"/>
