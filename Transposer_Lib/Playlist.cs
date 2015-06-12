@@ -19,11 +19,18 @@ namespace Transposer_Lib
         }
         public Playlist(string filename) 
         {
-            playlistFile.Load(filename);
-            playlistFile.SetDirectory(playlistDIR);
-            playlistFile.Save();
-            List<string> songFiles = playlistFile.GetFileContent();
-            LoadFromList(songFiles);
+            try
+            {
+                playlistFile.Load(filename);
+                playlistFile.SetDirectory(playlistDIR);
+                playlistFile.Save();
+                List<string> songFiles = playlistFile.GetFileContent();
+                LoadFromList(songFiles);
+            }
+            catch
+            {
+
+            }
         }
 
         private void LoadFromList(List<string> songFileNames)

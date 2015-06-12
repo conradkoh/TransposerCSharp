@@ -46,6 +46,7 @@ namespace Transposer_Lib
                 currentPlaylist = new Playlist(songLibraryPath);
             }
             library = new Playlist(songLibraryPath);
+            currentIdx = 0;
             UpdateDisplays();
         }
 

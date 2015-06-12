@@ -240,7 +240,6 @@ namespace Transposer_WPF
                     transposer.AddSong(file);
                 }
                 UpdateDisplays();
-                TABCONTROL_MAIN.SelectedItem = TABCONTROL_MAIN_TAB_MAIN;
 
             }
         }
