@@ -54,7 +54,7 @@ namespace Transposer_Lib
         {
             try{
                 currentSong.TransposeUp();
-                DISPLAY_MAIN = currentSong.ToString();
+                DISPLAY_MAIN = (currentIdx + 1) + ". " +  currentSong.ToString();
             }
             catch{
 
@@ -67,7 +67,7 @@ namespace Transposer_Lib
             try
             {
                 currentSong.TransposeDown();
-                DISPLAY_MAIN = currentSong.ToString();
+                DISPLAY_MAIN = (currentIdx + 1) + ". " +  currentSong.ToString();
             }
             catch
             {
@@ -124,7 +124,7 @@ namespace Transposer_Lib
             try
             {
                 DISPLAY_PLAYLIST = currentPlaylist.GetPlaylist();
-                DISPLAY_MAIN = currentSong.ToString();
+                DISPLAY_MAIN = (currentIdx + 1) + ". " + currentSong.ToString();
             }
             catch (Exception e) { }
             

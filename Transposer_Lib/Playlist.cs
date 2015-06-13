@@ -49,7 +49,14 @@ namespace Transposer_Lib
         public string GetPlaylist()
         {
             List<string> output = playlistFile.GetFileContent();
-            string result = String.Join(System.Environment.NewLine, output);
+            string result= "";
+            int i = 0;
+            foreach (string line in output)
+            {
+                i++;
+                result += i + ". " + line + System.Environment.NewLine;
+            }
+            //string result = String.Join(System.Environment.NewLine, output);
             return result;
         }
 

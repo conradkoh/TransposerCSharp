@@ -10,7 +10,7 @@
         <TabControl x:Name="TABCONTROL_MAIN" Grid.ColumnSpan="2" Margin="0,0,0,-0.2" SnapsToDevicePixels="True" ClipToBounds="True">
             <TabItem x:Name="TABCONTROL_MAIN_TAB_MAIN" Header="Main">
                 <Grid x:Name="GRID_TABCONTROL" Background="#FFE5E5E5" Margin="-3,0,-1.2,-1.6">
-                    <TextBox x:Name="DISPLAY_MAIN" Margin="10,44,277,19" TextWrapping="Wrap" IsReadOnly="True" IsReadOnlyCaretVisible="True" Drop="DISPLAY_MAIN_Drop" DragEnter="DISPLAY_MAIN_DragEnter" VerticalScrollBarVisibility="Auto"/>
+                    <TextBox x:Name="DISPLAY_MAIN" Margin="10,44,277,19" TextWrapping="Wrap" IsReadOnly="True" IsReadOnlyCaretVisible="True" Drop="DISPLAY_MAIN_Drop" DragEnter="DISPLAY_MAIN_DragEnter" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2"/>
                     <Button x:Name="BUTTON_TRANSPOSE_UP" Content="Transpose Up" HorizontalAlignment="Right" Margin="0,48,139,0" VerticalAlignment="Top" Width="120" Height="120" Background="#FFDDDDDD" Click="BUTTON_TRANSPOSE_UP_Click"/>
                     <Button x:Name="BUTTON_TRANSPOSE_DOWN" Content="Transpose Down" HorizontalAlignment="Right" Margin="0,169,139,0" VerticalAlignment="Top" Width="120" Height="120" Click="BUTTON_TRANSPOSE_DOWN_Click"/>
                     <TextBox x:Name="DISPLAY_PLAYLIST" Margin="0,320,16,20" TextWrapping="Wrap" Width="241" HorizontalAlignment="Right" Drop="DISPLAY_PLAYLIST_Drop" DragEnter="DISPLAY_PLAYLIST_DragEnter" IsReadOnly="True" VerticalScrollBarVisibility="Auto"/>
@@ -47,8 +47,10 @@
                     <TextBox x:Name="OPTIONS_DISPLAY_PLAYLIST" HorizontalAlignment="Left" Height="287" Margin="43,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" IsReadOnly="True" VerticalScrollBarVisibility="Auto"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="TabItem" HorizontalAlignment="Left" Height="20.2666666666667" VerticalAlignment="Top" Width="55.4666666666667">
-                <Grid Background="#FFE5E5E5"/>
+            <TabItem Header="Chord Chart" HorizontalAlignment="Left" Height="20.2666666666667" VerticalAlignment="Top" Width="55.4666666666667">
+                <Grid Background="#FFE5E5E5">
+                    <Image x:Name="IMAGE_CHORDCHART" Margin="225,61,221.8,57.4" Source="Chord Chart.JPG" Stretch="Fill"/>
+                </Grid>
             </TabItem>
         </TabControl>
 
