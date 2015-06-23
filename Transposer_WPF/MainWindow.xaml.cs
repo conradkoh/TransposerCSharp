@@ -27,6 +27,9 @@ namespace Transposer_WPF
             MaintainDirectories();
             transposer = new Transposer();
             UpdateDisplays();
+            //VisualFeedback feedbackBox = new VisualFeedback();
+            //feedbackBox.Show();
+
         }
 
         private void BUTTON_TRANSPOSE_UP_Click(object sender, RoutedEventArgs e)
@@ -244,6 +247,34 @@ namespace Transposer_WPF
             }
         }
 
+        private void BUTTON_INCREASE_FONT_SIZE_Click(object sender, RoutedEventArgs e)
+        {
+            DISPLAY_MAIN.FontSize = DISPLAY_MAIN.FontSize + 1;
+        }
+
+        private void BUTTON_DECREASE_FONT_SIZE_Click(object sender, RoutedEventArgs e)
+        {
+            DISPLAY_MAIN.FontSize = DISPLAY_MAIN.FontSize - 1;
+        }
+
+        private void MAIN_GRID_SONGDROP_Drop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                foreach (string file in files)
+                {
+                    transposer.AddSong(file);
+                }
+                UpdateDisplays();
+
+            }
+        }
+
+        private void MAIN_GRID_SONGDROP_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effects = DragDropEffects.All;
+        }
 
     }
 }

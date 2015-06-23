@@ -1,1 +1,17 @@
 C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\bin\Release\Transposer_WPF.exe.config
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\bin\Release\Transposer_WPF.exe
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\bin\Release\Transposer_WPF.pdb
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\bin\Release\Transposer_Lib.dll
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\bin\Release\Transposer_Lib.pdb
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Release\Transposer_WPF.csprojResolveAssemblyReference.cache
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Release\MainWindow.baml
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Release\VisualFeedback.baml
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Release\MainWindow.g.cs
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Release\VisualFeedback.g.cs
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Release\App.g.cs
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Release\Transposer_WPF_MarkupCompile.cache
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Release\Transposer_WPF.g.resources
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Release\Transposer_WPF.Properties.Resources.resources
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Release\Transposer_WPF.csproj.GenerateResource.Cache
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Release\Transposer_WPF.exe
+C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_WPF\obj\Release\Transposer_WPF.pdb

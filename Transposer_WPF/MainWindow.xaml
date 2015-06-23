@@ -9,21 +9,24 @@
         </Grid.ColumnDefinitions>
         <TabControl x:Name="TABCONTROL_MAIN" Grid.ColumnSpan="2" Margin="0,0,0,-0.2" SnapsToDevicePixels="True" ClipToBounds="True">
             <TabItem x:Name="TABCONTROL_MAIN_TAB_MAIN" Header="Main">
-                <Grid x:Name="GRID_TABCONTROL" Background="#FFE5E5E5" Margin="-3,0,-1.2,-1.6">
-                    <TextBox x:Name="DISPLAY_MAIN" Margin="10,44,277,19" TextWrapping="Wrap" IsReadOnly="True" IsReadOnlyCaretVisible="True" Drop="DISPLAY_MAIN_Drop" DragEnter="DISPLAY_MAIN_DragEnter" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2"/>
+                <Grid x:Name="GRID_TABCONTROL" Background="#FFE5E5E5" Margin="-4,-2,-0.2,0.4">
+                    <TextBox x:Name="DISPLAY_MAIN" Margin="10,44,277,19" TextWrapping="Wrap" IsReadOnly="True" IsReadOnlyCaretVisible="True" Drop="DISPLAY_MAIN_Drop" DragEnter="DISPLAY_MAIN_DragEnter" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2" IsManipulationEnabled="True"/>
+                    <TextBox x:Name="DISPLAY_PLAYLIST" Margin="0,320,16,20" TextWrapping="Wrap" Width="241" HorizontalAlignment="Right" Drop="DISPLAY_PLAYLIST_Drop" DragEnter="DISPLAY_PLAYLIST_DragEnter" IsReadOnly="True" VerticalScrollBarVisibility="Auto" AllowDrop="True" PreviewDragOver="DISPLAY_PLAYLIST_DragEnter" PreviewDrop="DISPLAY_PLAYLIST_Drop"/>
+                    <Grid x:Name="MAIN_GRID_SONGDROP" HorizontalAlignment="Left" Height="728" Margin="4,38,0,0" VerticalAlignment="Top" Width="982" Background="#FF6E6E6E" AllowDrop="True" Drop="MAIN_GRID_SONGDROP_Drop" DragEnter="MAIN_GRID_SONGDROP_DragEnter" OpacityMask="#FFA19999" Opacity="0"/>
                     <Button x:Name="BUTTON_TRANSPOSE_UP" Content="Transpose Up" HorizontalAlignment="Right" Margin="0,48,139,0" VerticalAlignment="Top" Width="120" Height="120" Background="#FFDDDDDD" Click="BUTTON_TRANSPOSE_UP_Click"/>
                     <Button x:Name="BUTTON_TRANSPOSE_DOWN" Content="Transpose Down" HorizontalAlignment="Right" Margin="0,169,139,0" VerticalAlignment="Top" Width="120" Height="120" Click="BUTTON_TRANSPOSE_DOWN_Click"/>
-                    <TextBox x:Name="DISPLAY_PLAYLIST" Margin="0,320,16,20" TextWrapping="Wrap" Width="241" HorizontalAlignment="Right" Drop="DISPLAY_PLAYLIST_Drop" DragEnter="DISPLAY_PLAYLIST_DragEnter" IsReadOnly="True" VerticalScrollBarVisibility="Auto"/>
                     <Button x:Name="MAIN_BUTTON_NEXT" Content="Next" Margin="0,48,17,0" VerticalAlignment="Top" Width="120" Height="120" Click="MAIN_BUTTON_NEXT_Click" HorizontalAlignment="Right"/>
                     <Button x:Name="MAIN_BUTTON_PREVIOUS" Content="Previous" Margin="0,169,17,0" VerticalAlignment="Top" Width="120" Height="120" Background="#FFDDDDDD" Click="MAIN_BUTTON_PREVIOUS_Click" HorizontalAlignment="Right"/>
                     <Button x:Name="MAIN_BUTTON_EDIT_PLAYLIST" Content="Edit Playlist" Margin="0,294,15,0" VerticalAlignment="Top" Width="242" Click="MAIN_BUTTON_EDIT_PLAYLIST_Click" HorizontalAlignment="Right"/>
                     <Button x:Name="MAIN_BUTTON_EDIT_SONG" Content="Edit Song" HorizontalAlignment="Left" Margin="11,13,0,0" VerticalAlignment="Top" Width="350" Click="MAIN_BUTTON_EDIT_SONG_Click"/>
                     <Button x:Name="MAIN_BUTTON_RELOAD" Content="Reload" HorizontalAlignment="Right" Margin="0,13,20,0" VerticalAlignment="Top" Width="237" Click="BUTTON_RELOAD_Click"/>
                     <Button x:Name="MAIN_BUTTON_SAVE_STATE" Content="Save State" HorizontalAlignment="Left" Margin="363,13,0,0" VerticalAlignment="Top" Width="347" Click="MAIN_BUTTON_SAVE_STATE_Click"/>
+                    <Button x:Name="BUTTON_INCREASE_FONT_SIZE" Content="Increase Font Size" HorizontalAlignment="Left" Margin="617,55,0,0" VerticalAlignment="Top" Width="75" Click="BUTTON_INCREASE_FONT_SIZE_Click" Height="67"/>
+                    <Button x:Name="BUTTON_DECREASE_FONT_SIZE" Content="Decrease Font Size" HorizontalAlignment="Left" Margin="616,128,0,0" VerticalAlignment="Top" Width="75" Click="BUTTON_DECREASE_FONT_SIZE_Click" Height="70"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="TABCONTROL_MAIN_TAB_OPTIONS" Header="Options">
-                <Grid Background="#FFE5E5E5" Margin="-8,0,-1.2,0.4">
+                <Grid Background="#FFE5E5E5" Margin="-6,-4,-3.2,4.4">
                     <Button x:Name="OPTIONS_BUTTON_LOAD_PLAYLIST" Content="Load Playlist" Margin="0,30,13,0" VerticalAlignment="Top" Width="240" Height="30" Click="OPTIONS_BUTTON_LOAD_PLAYLIST_Click" HorizontalAlignment="Right"/>
                     <Button x:Name="OPTIONS_BUTTON_ADD_SONG" Content="Add Song" Margin="0,70,13,0" VerticalAlignment="Top" Width="240" Height="30" Click="OPTIONS_BUTTON_ADD_SONG_Click" HorizontalAlignment="Right"/>
                     <Button x:Name="OPTIONS_BUTTON_PLAYLIST_DIRECTORY" Content="Playlist Directory" HorizontalAlignment="Left" Margin="33,29,0,0" VerticalAlignment="Top" Width="146" Height="109" Click="OPTIONS_BUTTON_PLAYLIST_DIRECTORY_Click"/>
