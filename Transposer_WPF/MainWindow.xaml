@@ -12,10 +12,9 @@
                 <Grid x:Name="GRID_TABCONTROL" Background="#FFE5E5E5" Margin="-4,0,-0.2,-1.6">
                     <TextBox x:Name="DISPLAY_MAIN" Margin="10,44,277,19" TextWrapping="Wrap" IsReadOnly="True" IsReadOnlyCaretVisible="True" Drop="DISPLAY_MAIN_Drop" DragEnter="DISPLAY_MAIN_DragEnter" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2" IsManipulationEnabled="True"/>
                     <TextBox x:Name="DISPLAY_PLAYLIST" Margin="0,320,16,20" TextWrapping="Wrap" Width="241" HorizontalAlignment="Right" Drop="DISPLAY_PLAYLIST_Drop" DragEnter="DISPLAY_PLAYLIST_DragEnter" IsReadOnly="True" VerticalScrollBarVisibility="Auto" AllowDrop="True" PreviewDragOver="DISPLAY_PLAYLIST_DragEnter" PreviewDrop="DISPLAY_PLAYLIST_Drop"/>
-                    <Grid x:Name="MAIN_GRID_SONGDROP" HorizontalAlignment="Left" Height="728" Margin="4,38,0,0" VerticalAlignment="Top" Width="982" Background="#FF6E6E6E" AllowDrop="True" Drop="MAIN_GRID_SONGDROP_Drop" DragEnter="MAIN_GRID_SONGDROP_DragEnter" OpacityMask="#FFA19999" Opacity="0">
+                    <Grid x:Name="MAIN_GRID_SONGDROP" HorizontalAlignment="Left" Height="728" Margin="734,38,0,0" VerticalAlignment="Top" Width="219" Background="#FF6E6E6E" AllowDrop="True" Drop="MAIN_GRID_SONGDROP_Drop" DragEnter="MAIN_GRID_SONGDROP_DragEnter" OpacityMask="#FFA19999" Opacity="0">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="725*"/>
-                            <ColumnDefinition Width="257*"/>
+                            <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                     </Grid>
                     <Button x:Name="BUTTON_TRANSPOSE_UP" Content="Transpose Up" HorizontalAlignment="Right" Margin="0,48,139,0" VerticalAlignment="Top" Width="120" Height="120" Background="#FFDDDDDD" Click="BUTTON_TRANSPOSE_UP_Click"/>
@@ -26,10 +25,12 @@
                     <Button x:Name="MAIN_BUTTON_EDIT_SONG" Content="Edit Song" HorizontalAlignment="Left" Margin="11,13,0,0" VerticalAlignment="Top" Width="350" Click="MAIN_BUTTON_EDIT_SONG_Click"/>
                     <Button x:Name="MAIN_BUTTON_RELOAD" Content="Reload" HorizontalAlignment="Right" Margin="0,13,20,0" VerticalAlignment="Top" Width="237" Click="BUTTON_RELOAD_Click"/>
                     <Button x:Name="MAIN_BUTTON_SAVE_STATE" Content="Save State" HorizontalAlignment="Left" Margin="363,13,0,0" VerticalAlignment="Top" Width="347" Click="MAIN_BUTTON_SAVE_STATE_Click"/>
-                    <Image HorizontalAlignment="Right" Height="67" Margin="0,52,284,0" VerticalAlignment="Top" Width="75" Source="zoom-in.png" Stretch="Fill"/>
-                    <Image HorizontalAlignment="Right" Height="67" Margin="0,140,285,0" VerticalAlignment="Top" Width="75" Source="zoom-out.png"/>
-                    <Button x:Name="BUTTON_DECREASE_FONT_SIZE" Content="" HorizontalAlignment="Right" Margin="0,138,281,0" VerticalAlignment="Top" Width="75" Click="BUTTON_DECREASE_FONT_SIZE_Click" Height="70" HorizontalContentAlignment="Right" Opacity="0.2" Background="White" BorderBrush="Black"/>
-                    <Button x:Name="BUTTON_INCREASE_FONT_SIZE" Content="" HorizontalAlignment="Right" Margin="0,52,283,0" VerticalAlignment="Top" Width="75" Click="BUTTON_INCREASE_FONT_SIZE_Click" Height="67" HorizontalContentAlignment="Right" Opacity="0.2" Background="#FFFFFEFE" BorderBrush="Black"/>
+                    <Grid Margin="0,55,297,567" HorizontalAlignment="Right" Width="90">
+                        <Image HorizontalAlignment="Right" Height="67" Margin="0,76,10.067,0" VerticalAlignment="Top" Width="75" Source="zoom-out.png"/>
+                        <Image HorizontalAlignment="Right" Height="67" Margin="0,3,11.067,0" VerticalAlignment="Top" Width="75" Source="zoom-in.png"/>
+                        <Button x:Name="BUTTON_INCREASE_FONT_SIZE" Content="" HorizontalAlignment="Right" Margin="0,4,4.067,0" VerticalAlignment="Top" Width="75" Click="BUTTON_INCREASE_FONT_SIZE_Click" Height="67" HorizontalContentAlignment="Right" Opacity="0.2" Background="#FFFFFEFE" BorderBrush="Black"/>
+                        <Button x:Name="BUTTON_DECREASE_FONT_SIZE" Content="" HorizontalAlignment="Right" Margin="0,76,4.067,0" VerticalAlignment="Top" Width="75" Click="BUTTON_DECREASE_FONT_SIZE_Click" Height="67" HorizontalContentAlignment="Right" Opacity="0.2" Background="White" BorderBrush="Black"/>
+                    </Grid>
                 </Grid>
             </TabItem>
             <TabItem x:Name="TABCONTROL_MAIN_TAB_OPTIONS" Header="Options">

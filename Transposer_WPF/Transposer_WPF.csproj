@@ -115,6 +115,8 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="zoom-in.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="zoom-out.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
