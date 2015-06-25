@@ -176,6 +176,8 @@ namespace Transposer_WPF
 
         private void OPTIONS_BUTTON_CREATE_FILE_Click(object sender, RoutedEventArgs e)
         {
+            transposer.Reload();
+            UpdateDisplays();
             OPTIONS_CREATE_FILE_MESSAGEBOX.Visibility = System.Windows.Visibility.Visible;
             OPTIONS_TEXTBOX_INPUT.Text = "";
         }
