@@ -254,7 +254,11 @@ namespace Transposer_WPF
 
         private void BUTTON_DECREASE_FONT_SIZE_Click(object sender, RoutedEventArgs e)
         {
-            DISPLAY_MAIN.FontSize = DISPLAY_MAIN.FontSize - 1;
+            if (DISPLAY_MAIN.FontSize > 1)
+            {
+                DISPLAY_MAIN.FontSize = DISPLAY_MAIN.FontSize - 1;
+            }
+            
         }
 
         private void MAIN_GRID_SONGDROP_Drop(object sender, DragEventArgs e)

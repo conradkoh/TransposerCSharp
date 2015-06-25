@@ -9,10 +9,15 @@
         </Grid.ColumnDefinitions>
         <TabControl x:Name="TABCONTROL_MAIN" Grid.ColumnSpan="2" Margin="0,0,0,-0.2" SnapsToDevicePixels="True" ClipToBounds="True">
             <TabItem x:Name="TABCONTROL_MAIN_TAB_MAIN" Header="Main">
-                <Grid x:Name="GRID_TABCONTROL" Background="#FFE5E5E5" Margin="-4,-2,-0.2,0.4">
+                <Grid x:Name="GRID_TABCONTROL" Background="#FFE5E5E5" Margin="-4,0,-0.2,-1.6">
                     <TextBox x:Name="DISPLAY_MAIN" Margin="10,44,277,19" TextWrapping="Wrap" IsReadOnly="True" IsReadOnlyCaretVisible="True" Drop="DISPLAY_MAIN_Drop" DragEnter="DISPLAY_MAIN_DragEnter" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2" IsManipulationEnabled="True"/>
                     <TextBox x:Name="DISPLAY_PLAYLIST" Margin="0,320,16,20" TextWrapping="Wrap" Width="241" HorizontalAlignment="Right" Drop="DISPLAY_PLAYLIST_Drop" DragEnter="DISPLAY_PLAYLIST_DragEnter" IsReadOnly="True" VerticalScrollBarVisibility="Auto" AllowDrop="True" PreviewDragOver="DISPLAY_PLAYLIST_DragEnter" PreviewDrop="DISPLAY_PLAYLIST_Drop"/>
-                    <Grid x:Name="MAIN_GRID_SONGDROP" HorizontalAlignment="Left" Height="728" Margin="4,38,0,0" VerticalAlignment="Top" Width="982" Background="#FF6E6E6E" AllowDrop="True" Drop="MAIN_GRID_SONGDROP_Drop" DragEnter="MAIN_GRID_SONGDROP_DragEnter" OpacityMask="#FFA19999" Opacity="0"/>
+                    <Grid x:Name="MAIN_GRID_SONGDROP" HorizontalAlignment="Left" Height="728" Margin="4,38,0,0" VerticalAlignment="Top" Width="982" Background="#FF6E6E6E" AllowDrop="True" Drop="MAIN_GRID_SONGDROP_Drop" DragEnter="MAIN_GRID_SONGDROP_DragEnter" OpacityMask="#FFA19999" Opacity="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="725*"/>
+                            <ColumnDefinition Width="257*"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
                     <Button x:Name="BUTTON_TRANSPOSE_UP" Content="Transpose Up" HorizontalAlignment="Right" Margin="0,48,139,0" VerticalAlignment="Top" Width="120" Height="120" Background="#FFDDDDDD" Click="BUTTON_TRANSPOSE_UP_Click"/>
                     <Button x:Name="BUTTON_TRANSPOSE_DOWN" Content="Transpose Down" HorizontalAlignment="Right" Margin="0,169,139,0" VerticalAlignment="Top" Width="120" Height="120" Click="BUTTON_TRANSPOSE_DOWN_Click"/>
                     <Button x:Name="MAIN_BUTTON_NEXT" Content="Next" Margin="0,48,17,0" VerticalAlignment="Top" Width="120" Height="120" Click="MAIN_BUTTON_NEXT_Click" HorizontalAlignment="Right"/>
@@ -21,8 +26,10 @@
                     <Button x:Name="MAIN_BUTTON_EDIT_SONG" Content="Edit Song" HorizontalAlignment="Left" Margin="11,13,0,0" VerticalAlignment="Top" Width="350" Click="MAIN_BUTTON_EDIT_SONG_Click"/>
                     <Button x:Name="MAIN_BUTTON_RELOAD" Content="Reload" HorizontalAlignment="Right" Margin="0,13,20,0" VerticalAlignment="Top" Width="237" Click="BUTTON_RELOAD_Click"/>
                     <Button x:Name="MAIN_BUTTON_SAVE_STATE" Content="Save State" HorizontalAlignment="Left" Margin="363,13,0,0" VerticalAlignment="Top" Width="347" Click="MAIN_BUTTON_SAVE_STATE_Click"/>
-                    <Button x:Name="BUTTON_INCREASE_FONT_SIZE" Content="Increase Font Size" HorizontalAlignment="Left" Margin="617,55,0,0" VerticalAlignment="Top" Width="75" Click="BUTTON_INCREASE_FONT_SIZE_Click" Height="67"/>
-                    <Button x:Name="BUTTON_DECREASE_FONT_SIZE" Content="Decrease Font Size" HorizontalAlignment="Left" Margin="616,128,0,0" VerticalAlignment="Top" Width="75" Click="BUTTON_DECREASE_FONT_SIZE_Click" Height="70"/>
+                    <Image HorizontalAlignment="Right" Height="67" Margin="0,52,284,0" VerticalAlignment="Top" Width="75" Source="zoom-in.png" Stretch="Fill"/>
+                    <Image HorizontalAlignment="Right" Height="67" Margin="0,140,285,0" VerticalAlignment="Top" Width="75" Source="zoom-out.png"/>
+                    <Button x:Name="BUTTON_DECREASE_FONT_SIZE" Content="" HorizontalAlignment="Right" Margin="0,138,281,0" VerticalAlignment="Top" Width="75" Click="BUTTON_DECREASE_FONT_SIZE_Click" Height="70" HorizontalContentAlignment="Right" Opacity="0.2" Background="White" BorderBrush="Black"/>
+                    <Button x:Name="BUTTON_INCREASE_FONT_SIZE" Content="" HorizontalAlignment="Right" Margin="0,52,283,0" VerticalAlignment="Top" Width="75" Click="BUTTON_INCREASE_FONT_SIZE_Click" Height="67" HorizontalContentAlignment="Right" Opacity="0.2" Background="#FFFFFEFE" BorderBrush="Black"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="TABCONTROL_MAIN_TAB_OPTIONS" Header="Options">
@@ -31,7 +38,7 @@
                     <Button x:Name="OPTIONS_BUTTON_ADD_SONG" Content="Add Song" Margin="0,70,13,0" VerticalAlignment="Top" Width="240" Height="30" Click="OPTIONS_BUTTON_ADD_SONG_Click" HorizontalAlignment="Right"/>
                     <Button x:Name="OPTIONS_BUTTON_PLAYLIST_DIRECTORY" Content="Playlist Directory" HorizontalAlignment="Left" Margin="33,29,0,0" VerticalAlignment="Top" Width="146" Height="109" Click="OPTIONS_BUTTON_PLAYLIST_DIRECTORY_Click"/>
                     <Button x:Name="OPTIONS_BUTTON_SONG_DIRECTORY" Content="Song Directory" HorizontalAlignment="Left" Margin="195,28,0,0" VerticalAlignment="Top" Width="146" Height="109" Click="OPTIONS_BUTTON_SONG_DIRECTORY_Click"/>
-                    <Button x:Name="BUTTON_HOME" Content="Home" Margin="0,119,13,14" Width="240" Height="641" Click="BUTTON_HOME_Click" HorizontalAlignment="Right"/>
+                    <Button x:Name="BUTTON_HOME" Content="Home" Margin="0,119,13,24" Width="240" Click="BUTTON_HOME_Click" HorizontalAlignment="Right" IsCancel="True"/>
                     <Button x:Name="OPTIONS_BUTTON_CREATE_FILE" Content="Create File" Margin="0,30,266,0" VerticalAlignment="Top" Width="240" Height="30" HorizontalAlignment="Right" Click="OPTIONS_BUTTON_CREATE_FILE_Click"/>
                     <Grid x:Name="OPTIONS_CREATE_FILE_MESSAGEBOX" HorizontalAlignment="Left" Height="159" Margin="375,123,0,0" VerticalAlignment="Top" Width="353" Background="#FFD7D6D6" Visibility="Hidden">
                         <Grid.Effect>
@@ -51,7 +58,7 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Chord Chart" HorizontalAlignment="Left" Height="20.2666666666667" VerticalAlignment="Top" Width="55.4666666666667">
-                <Grid Background="#FFE5E5E5">
+                <Grid Background="#FFE5E5E5" Margin="0,-2,-0.2,0.4">
                     <Image x:Name="IMAGE_CHORDCHART" Margin="225,61,221.8,57.4" Source="Chord Chart.JPG" Stretch="Fill"/>
                 </Grid>
             </TabItem>
