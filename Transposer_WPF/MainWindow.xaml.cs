@@ -51,6 +51,7 @@ namespace Transposer_WPF
             DISPLAY_MAIN.Text = transposer.DISPLAY_MAIN;
             DISPLAY_PLAYLIST.Text = transposer.DISPLAY_PLAYLIST;
             OPTIONS_DISPLAY_PLAYLIST.Text = transposer.DISPLAY_PLAYLIST;
+            Search("");
             
             
         }
@@ -240,6 +241,7 @@ namespace Transposer_WPF
                 {
                     transposer.LoadPlaylist(file);
                 }
+                transposer.Reload();
                 UpdateDisplays();
 
             }
@@ -273,11 +275,14 @@ namespace Transposer_WPF
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
+                System.ComponentModel.BackgroundWorker loader = new System.ComponentModel.BackgroundWorker();
+                System.Threading.Thread.CurrentThread.IsBackground = true;
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
                 foreach (string file in files)
                 {
                     transposer.AddSong(file);
                 }
+                transposer.Reload();
                 UpdateDisplays();
 
             }
