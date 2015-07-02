@@ -24,6 +24,8 @@ namespace Transposer_Lib
         public string DISPLAY_PLAYLIST;
         public string DISPLAY_FEEDBACK;
 
+        public string[] allFiles;
+
         Song currentSong;
         public Transposer()
         {
@@ -32,6 +34,7 @@ namespace Transposer_Lib
 
         public void Reload()
         {
+            allFiles = System.IO.Directory.GetFiles(Song.songDIR);
             debugFile.Load(debugFilePath);
             sysFile.Load(systemFilePath);
             List<string> fileContent = sysFile.GetFileContent();
@@ -162,6 +165,12 @@ namespace Transposer_Lib
         public void AddSong(string filePath)
         {
             currentPlaylist.AddSong(filePath);
+            UpdateDisplays();
+        }
+
+        public void AddExistingSong(string fileName)
+        {
+            currentPlaylist.AddExistingSong(fileName);
             UpdateDisplays();
         }
 

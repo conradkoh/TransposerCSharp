@@ -2,3 +2,6 @@ a.txt
 b.txt
 c.txt
 d.txt
+10,000 Reasons [Bless The Lord] [C].txt
+Above All (A).txt
+10,000 Reasons [Bless The Lord] (G).txt

@@ -41,7 +41,15 @@
                     <Button x:Name="OPTIONS_BUTTON_SONG_DIRECTORY" Content="Song Directory" HorizontalAlignment="Left" Margin="195,28,0,0" VerticalAlignment="Top" Width="146" Height="109" Click="OPTIONS_BUTTON_SONG_DIRECTORY_Click"/>
                     <Button x:Name="BUTTON_HOME" Content="Home" Margin="0,119,13,24" Width="240" Click="BUTTON_HOME_Click" HorizontalAlignment="Right" IsCancel="True"/>
                     <Button x:Name="OPTIONS_BUTTON_CREATE_FILE" Content="Create File" Margin="0,30,266,0" VerticalAlignment="Top" Width="240" Height="30" HorizontalAlignment="Right" Click="OPTIONS_BUTTON_CREATE_FILE_Click"/>
-                    <Grid x:Name="OPTIONS_CREATE_FILE_MESSAGEBOX" HorizontalAlignment="Left" Height="159" Margin="375,123,0,0" VerticalAlignment="Top" Width="353" Background="#FFD7D6D6" Visibility="Hidden">
+                    <Grid x:Name="OPTIONS_GRID_FILEDROP" HorizontalAlignment="Center" Height="180" Margin="20,502,703,0" VerticalAlignment="Top" Width="275" Background="#FFD5D5D5" Drop="OPTIONS_GRID_FILE_DROP" AllowDrop="True">
+                        <TextBlock x:Name="GRID_FILE_DROP_LABEL" HorizontalAlignment="Center" Margin="30,57,43,0" TextWrapping="Wrap" Text="Drop songs here to load them." VerticalAlignment="Top" Width="202" Height="64" TextAlignment="Center"/>
+                    </Grid>
+                    <TextBox x:Name="OPTIONS_DISPLAY_PLAYLIST" HorizontalAlignment="Left" Height="287" Margin="21,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" IsReadOnly="True" VerticalScrollBarVisibility="Auto"/>
+                    <TextBox x:Name="OPTIONS_DISPLAY_SEARCHRESULTS" HorizontalAlignment="Left" Height="22" Margin="315,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="305" TextChanged="OPTIONS_DISPLAY_SEARCHRESULTS_TextChanged"/>
+                    <ListBox x:Name="OPTIONS_LISTBOX_SEARCHRESULTS" HorizontalAlignment="Left" Height="380" Margin="314,302,0,0" VerticalAlignment="Top" Width="308" />
+                    <Button x:Name="OPTIONS_BUTTON_ADD_SELECTED" Content="Add" HorizontalAlignment="Left" Margin="638,305,0,0" VerticalAlignment="Top" Width="75" Click="OPTIONS_BUTTON_ADD_SELECTED_Click"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="317,252,0,0" TextWrapping="Wrap" Text="Search:" VerticalAlignment="Top"/>
+                    <Grid x:Name="OPTIONS_CREATE_FILE_MESSAGEBOX" HorizontalAlignment="Left" Height="159" Margin="368,83,0,0" VerticalAlignment="Top" Width="353" Background="#FFD7D6D6" Visibility="Hidden">
                         <Grid.Effect>
                             <DropShadowEffect BlurRadius="5" ShadowDepth="1.5"/>
                         </Grid.Effect>
@@ -52,10 +60,6 @@
                         <TextBlock HorizontalAlignment="Left" Margin="11,33,0,0" TextWrapping="Wrap" Text="Enter the file name of the file you want to create:" VerticalAlignment="Top" Width="290"/>
                         <Button x:Name="OPTIONS_BUTTON_CREATE_SONG" Content="Create Song" HorizontalAlignment="Left" Margin="21,117,0,0" VerticalAlignment="Top" Width="96" Height="26" Click="OPTIONS_BUTTON_CREATE_SONG_Click"/>
                     </Grid>
-                    <Grid x:Name="OPTIONS_GRID_FILEDROP" HorizontalAlignment="Center" Height="180" Margin="387,315,268,0" VerticalAlignment="Top" Width="343" Background="#FFD5D5D5" Drop="OPTIONS_GRID_FILE_DROP" AllowDrop="True">
-                        <TextBlock x:Name="GRID_FILE_DROP_LABEL" HorizontalAlignment="Center" Margin="95,76,94,0" TextWrapping="Wrap" Text="Drop songs here to load them." VerticalAlignment="Top" Width="154" Height="64" TextAlignment="Center"/>
-                    </Grid>
-                    <TextBox x:Name="OPTIONS_DISPLAY_PLAYLIST" HorizontalAlignment="Left" Height="287" Margin="43,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" IsReadOnly="True" VerticalScrollBarVisibility="Auto"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Chord Chart" HorizontalAlignment="Left" Height="20.2666666666667" VerticalAlignment="Top" Width="55.4666666666667">

@@ -27,9 +27,8 @@ namespace Transposer_WPF
             MaintainDirectories();
             transposer = new Transposer();
             UpdateDisplays();
-            //VisualFeedback feedbackBox = new VisualFeedback();
-            //feedbackBox.Show();
-
+            Search("");
+            
         }
 
         private void BUTTON_TRANSPOSE_UP_Click(object sender, RoutedEventArgs e)
@@ -54,6 +53,34 @@ namespace Transposer_WPF
             OPTIONS_DISPLAY_PLAYLIST.Text = transposer.DISPLAY_PLAYLIST;
             
             
+        }
+
+        private void Search(string fileName)
+        {
+            string[] allFiles = transposer.allFiles;
+            OPTIONS_LISTBOX_SEARCHRESULTS.Items.Clear();
+            if (fileName == "")
+            {
+                
+                foreach (string filePath in allFiles)
+                {
+                    OPTIONS_LISTBOX_SEARCHRESULTS.Items.Add(System.IO.Path.GetFileName(filePath));
+                }
+
+            }
+            else
+            {
+                //string[] searchResults = System.IO.Directory.GetFiles(System.IO.Directory.GetCurrentDirectory() + "//Songs", fileName);
+                foreach (string filePath in allFiles)
+                {
+                    if (System.IO.Path.GetFileName(filePath).ToLower().Contains(fileName.ToLower()))
+                    {
+                        OPTIONS_LISTBOX_SEARCHRESULTS.Items.Add(System.IO.Path.GetFileName(filePath));
+                    }
+                    
+                }
+            }
+
         }
 
         private void OPTIONS_BUTTON_LOAD_PLAYLIST_Click(object sender, RoutedEventArgs e)
@@ -178,7 +205,14 @@ namespace Transposer_WPF
         {
             transposer.Reload();
             UpdateDisplays();
-            OPTIONS_CREATE_FILE_MESSAGEBOX.Visibility = System.Windows.Visibility.Visible;
+            if (OPTIONS_CREATE_FILE_MESSAGEBOX.Visibility == System.Windows.Visibility.Visible)
+            {
+                OPTIONS_CREATE_FILE_MESSAGEBOX.Visibility = System.Windows.Visibility.Hidden;
+            }
+            else
+            {
+                OPTIONS_CREATE_FILE_MESSAGEBOX.Visibility = System.Windows.Visibility.Visible;
+            }
             OPTIONS_TEXTBOX_INPUT.Text = "";
         }
 
@@ -280,6 +314,21 @@ namespace Transposer_WPF
         private void MAIN_GRID_SONGDROP_DragEnter(object sender, DragEventArgs e)
         {
             e.Effects = DragDropEffects.All;
+        }
+
+        private void OPTIONS_BUTTON_ADD_SELECTED_Click(object sender, RoutedEventArgs e)
+        {
+            System.Collections.IList selectedItems = OPTIONS_LISTBOX_SEARCHRESULTS.SelectedItems;
+            foreach (Object item in selectedItems)
+            {
+                transposer.AddExistingSong(item.ToString());
+            }
+            UpdateDisplays();
+        }
+
+        private void OPTIONS_DISPLAY_SEARCHRESULTS_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Search(OPTIONS_DISPLAY_SEARCHRESULTS.Text);
         }
 
     }

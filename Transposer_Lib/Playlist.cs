@@ -128,5 +128,12 @@ namespace Transposer_Lib
             songList.Add(newSong);
             SaveState();
         }
+
+        public void AddExistingSong(string fileName)
+        {
+            Song newSong = new Song(Song.songDIR + "//" + fileName);
+            songList.Add(newSong);
+            SaveState();
+        }
     }
 }
