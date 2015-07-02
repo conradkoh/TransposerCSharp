@@ -60,6 +60,7 @@
                         <TextBlock HorizontalAlignment="Left" Margin="11,33,0,0" TextWrapping="Wrap" Text="Enter the file name of the file you want to create:" VerticalAlignment="Top" Width="290"/>
                         <Button x:Name="OPTIONS_BUTTON_CREATE_SONG" Content="Create Song" HorizontalAlignment="Left" Margin="21,117,0,0" VerticalAlignment="Top" Width="96" Height="26" Click="OPTIONS_BUTTON_CREATE_SONG_Click"/>
                     </Grid>
+                    <Button x:Name="OPTIONS_BUTTON_CLEARPLAYLIST" Content="Clear Playlist" HorizontalAlignment="Left" Margin="22,181,0,0" VerticalAlignment="Top" Width="229" Click="OPTIONS_BUTTON_CLEARPLAYLIST_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Chord Chart" HorizontalAlignment="Left" Height="20.2666666666667" VerticalAlignment="Top" Width="55.4666666666667">

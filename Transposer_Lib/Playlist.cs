@@ -41,9 +41,10 @@ namespace Transposer_Lib
             }
         }
 
-        private void ClearLists()
+        public void ClearLists()
         {
             songList.Clear();
+            SaveState();
         }
 
         public string GetPlaylist()
@@ -135,5 +136,6 @@ namespace Transposer_Lib
             songList.Add(newSong);
             SaveState();
         }
+
     }
 }

@@ -336,5 +336,11 @@ namespace Transposer_WPF
             Search(OPTIONS_DISPLAY_SEARCHRESULTS.Text);
         }
 
+        private void OPTIONS_BUTTON_CLEARPLAYLIST_Click(object sender, RoutedEventArgs e)
+        {
+            transposer.ClearPlaylist();
+            UpdateDisplays();
+        }
+
     }
 }

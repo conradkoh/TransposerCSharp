@@ -127,6 +127,7 @@ namespace Transposer_Lib
             try
             {
                 DISPLAY_PLAYLIST = currentPlaylist.GetPlaylist();
+                currentSong = currentPlaylist.GetSong(currentIdx + 1);
                 DISPLAY_MAIN = (currentIdx + 1) + ". " + currentSong.ToString();
             }
             catch (Exception e) { }
@@ -189,6 +190,13 @@ namespace Transposer_Lib
             }
             UpdateDisplays();
             return filePath;
+        }
+
+        public void ClearPlaylist()
+        {
+            currentPlaylist.ClearLists();
+            Reload();
+            UpdateDisplays();
         }
     }
 }
