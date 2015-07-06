@@ -127,7 +127,7 @@ namespace Transposer_Lib
             try
             {
                 DISPLAY_PLAYLIST = currentPlaylist.GetPlaylist();
-                currentSong = currentPlaylist.GetSong(currentIdx + 1);
+                currentSong = currentPlaylist.GetSong(currentIdx);
                 DISPLAY_MAIN = (currentIdx + 1) + ". " + currentSong.ToString();
             }
             catch (Exception e) { }
