@@ -1,7 +1,7 @@
 ABOVE ALL
 A016										KEY: A
 
-INTRO:      A   D   E   A   D/A   A 
+INTRO:      A   D   E   A   D/A   A
 
                     D            D/E                   A
 ABOVE ALL POWERS      ABOVE ALL KINGS

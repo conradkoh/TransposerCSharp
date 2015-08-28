@@ -6,3 +6,11 @@ C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transpos
 C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_Console\obj\Debug\Transposer_Console.csprojResolveAssemblyReference.cache
 C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_Console\obj\Debug\Transposer_Console.exe
 C:\Users\conra_000\Documents\Personal\C# projects\Transposer\Transposer\Transposer_Console\obj\Debug\Transposer_Console.pdb
+C:\Users\Conrad\Desktop\Transposer C#\TransposerCSharp\Transposer_Console\bin\Debug\Transposer_Console.exe.config
+C:\Users\Conrad\Desktop\Transposer C#\TransposerCSharp\Transposer_Console\bin\Debug\Transposer_Console.exe
+C:\Users\Conrad\Desktop\Transposer C#\TransposerCSharp\Transposer_Console\bin\Debug\Transposer_Console.pdb
+C:\Users\Conrad\Desktop\Transposer C#\TransposerCSharp\Transposer_Console\bin\Debug\Transposer_Lib.dll
+C:\Users\Conrad\Desktop\Transposer C#\TransposerCSharp\Transposer_Console\bin\Debug\Transposer_Lib.pdb
+C:\Users\Conrad\Desktop\Transposer C#\TransposerCSharp\Transposer_Console\obj\Debug\Transposer_Console.csprojResolveAssemblyReference.cache
+C:\Users\Conrad\Desktop\Transposer C#\TransposerCSharp\Transposer_Console\obj\Debug\Transposer_Console.exe
+C:\Users\Conrad\Desktop\Transposer C#\TransposerCSharp\Transposer_Console\obj\Debug\Transposer_Console.pdb

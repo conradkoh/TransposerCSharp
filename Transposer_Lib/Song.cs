@@ -135,11 +135,38 @@ namespace Transposer_Lib
             songFile.SetFileContent(songLines);
             songFile.Save();
         }
-
+        public static string TransposeLine(string input, int offset)
+        {
+            string bracketCharacterSet = "<>(){}[]:-";
+            int location = 0;
+            string scope = input;
+            string output = "";
+            string suffix = input;
+            int startIdx = 0;
+            while (location != -1 && startIdx < input.Length && startIdx != -1)
+            {
+                location = input.IndexOfAny(bracketCharacterSet.ToCharArray(), startIdx);
+                if (location != -1)
+                {
+                    string prefix = input.Substring(startIdx, location - startIdx);
+                    int newStartIdx = location + 1;
+                    if (newStartIdx != -1 && newStartIdx < input.Length)
+                    {
+                        suffix = input.Substring(newStartIdx, input.Length - newStartIdx);
+                        output += TransposeBlock(prefix, offset);
+                        char bracket = input.ElementAt(location);
+                        output += bracket;
+                    }
+                    startIdx = newStartIdx;
+                }
+            }
+            output += TransposeBlock(suffix, offset);
+            return output;
+        }
         //=========================================================
         //Transpose Algorithm Methods
         //=========================================================
-        public static string TransposeLine(string input, int offset)
+        public static string TransposeBlock(string input, int offset)
         {
             string transposedLine = input;
             if (ShouldTranspose(input))
@@ -180,10 +207,14 @@ namespace Transposer_Lib
 
             int tokenCount = tokens.Count() - whitespacecount;
 
-            if (validChordCount < 2   && tokenCount > 6)
+            //if (validChordCount < 2   && tokenCount > 6)
+            //{
+            //    shouldTranspose = false;
+            //} 
+            if (validChordCount != tokenCount)
             {
                 shouldTranspose = false;
-            } 
+            }
 
             return shouldTranspose;
 
@@ -213,7 +244,7 @@ namespace Transposer_Lib
             string chord = IsolateChord(input);
             string details = IsolateDetails(input);
             NOTES note = GetNoteEnum(chord);
-            if (note != NOTES.INVALID && IsValidDetail(details))
+            if (note != NOTES.INVALID && IsValidSingleDetail(details))
             {
                 int noteIdx = (int)note;
                 
@@ -280,8 +311,21 @@ namespace Transposer_Lib
 
             }
         }
+        private static bool IsValidChord(string chord)
+        {
+            bool isValid = true;
+            string[] tokens = chord.Split('/');
+            foreach (string token in tokens)
+            {
+                if (!IsValidSingleChord(token))
+                {
+                    isValid = false;
+                }
+            }
 
-        private static bool IsValidChord(string chord){
+            return isValid;
+        }
+        private static bool IsValidSingleChord(string chord){
             bool isValid = false;
             if (String.IsNullOrWhiteSpace(chord))
             {
@@ -293,7 +337,7 @@ namespace Transposer_Lib
                 string detail = IsolateDetails(chord);
                 NOTES chordEnum = GetNoteEnum(chordBase);
                 
-                if (IsValidDetail(detail) && chordEnum!=NOTES.INVALID)
+                if (IsValidSingleDetail(detail) && chordEnum!=NOTES.INVALID)
                 {
                     isValid = true;
                 }
@@ -301,7 +345,7 @@ namespace Transposer_Lib
             }
             
         }
-        private static bool IsValidDetail(string input)
+        private static bool IsValidSingleDetail(string input)
         {
             bool isValidAug = false;
             bool invalidCharacterFound = true;

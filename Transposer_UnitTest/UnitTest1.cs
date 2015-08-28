@@ -57,6 +57,12 @@ namespace Transposer_UnitTest
             actual = Transposer_Lib.Song.TransposeLine("Absinthe Brainy Character Diminish Ether Family Grace", 1);
             expected = "Absinthe Brainy Character Diminish Ether Family Grace";
             Assert.AreEqual(expected, actual);
+
+            //Testing the partition where block to be transposed is bracketed in a sentence line
+
+            actual = Transposer_Lib.Song.TransposeLine("A boy and a girl (Asus/Em7dim  Bmaj/Fmin5dim  C#/Gb  Db/A#m7)", 1);
+            expected = "A boy and a girl (Bbsus/Fm7dim  Cmaj/F#min5dim  D/G  D/Bm7)";
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
