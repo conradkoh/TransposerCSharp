@@ -8,7 +8,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TabControl x:Name="TABCONTROL_MAIN" Grid.ColumnSpan="2" Margin="0,0,0,-0.2" SnapsToDevicePixels="True" ClipToBounds="True">
-            <TabItem x:Name="TABCONTROL_MAIN_TAB_MAIN" Header="Main">
+            <TabItem x:Name="TABCONTROL_MAIN_TAB_MAIN" Header="Main" Width="100">
                 <Grid x:Name="GRID_TABCONTROL" Background="#FFE5E5E5" Margin="-4,0,-0.2,-1.6">
                     <TextBox x:Name="DISPLAY_MAIN" Margin="10,44,277,19" TextWrapping="Wrap" IsReadOnly="True" IsReadOnlyCaretVisible="True" Drop="DISPLAY_MAIN_Drop" DragEnter="DISPLAY_MAIN_DragEnter" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2" IsManipulationEnabled="True"/>
                     <TextBox x:Name="DISPLAY_PLAYLIST" Margin="0,320,16,20" TextWrapping="Wrap" Width="241" HorizontalAlignment="Right" Drop="DISPLAY_PLAYLIST_Drop" DragEnter="DISPLAY_PLAYLIST_DragEnter" IsReadOnly="True" VerticalScrollBarVisibility="Auto" AllowDrop="True" PreviewDragOver="DISPLAY_PLAYLIST_DragEnter" PreviewDrop="DISPLAY_PLAYLIST_Drop"/>
@@ -33,7 +33,7 @@
                     </Grid>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="TABCONTROL_MAIN_TAB_OPTIONS" Header="Options">
+            <TabItem x:Name="TABCONTROL_MAIN_TAB_OPTIONS" Header="Options" Width="100">
                 <Grid Background="#FFE5E5E5" Margin="-6,-4,-3.2,4.4">
                     <Button x:Name="OPTIONS_BUTTON_LOAD_PLAYLIST" Content="Load Playlist" Margin="0,30,13,0" VerticalAlignment="Top" Width="240" Height="30" Click="OPTIONS_BUTTON_LOAD_PLAYLIST_Click" HorizontalAlignment="Right"/>
                     <Button x:Name="OPTIONS_BUTTON_ADD_SONG" Content="Add Song" Margin="0,70,13,0" VerticalAlignment="Top" Width="240" Height="30" Click="OPTIONS_BUTTON_ADD_SONG_Click" HorizontalAlignment="Right"/>
@@ -65,9 +65,16 @@
                     </Grid>
                 </Grid>
             </TabItem>
-            <TabItem Header="Chord Chart" HorizontalAlignment="Left" Height="20.2666666666667" VerticalAlignment="Top" Width="55.4666666666667">
+            <TabItem Header="Chord Chart" HorizontalAlignment="Left" Height="20.2666666666667" VerticalAlignment="Top" Width="100">
                 <Grid Background="#FFE5E5E5" Margin="0,-2,-0.2,0.4">
                     <Image x:Name="IMAGE_CHORDCHART" Margin="225,61,221.8,57.4" Source="Chord Chart.JPG" Stretch="Fill"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Export" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="IMPORTEXPORT_DISPLAY_TEXTBOX" TextWrapping="Wrap" Margin="0,35,0,15"/>
+                    <Button x:Name="IMPORTEXPORT_BUTTON_EXPORT" Content="Export" HorizontalAlignment="Right" VerticalAlignment="Top" Width="157" Height="30" Margin="0,2,2,0" Click="IMPORTEXPORT_BUTTON_EXPORT_Click"/>
+                    <TextBox x:Name="IMPORTEXPORT_DISIPLAY_FEEDBACK" HorizontalAlignment="Left" Height="23" Margin="10,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" Background="#FFE5E5E5" BorderBrush="{x:Null}"/>
                 </Grid>
             </TabItem>
         </TabControl>

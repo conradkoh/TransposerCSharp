@@ -342,5 +342,12 @@ namespace Transposer_WPF
             UpdateDisplays();
         }
 
+        private void IMPORTEXPORT_BUTTON_EXPORT_Click(object sender, RoutedEventArgs e)
+        {
+            IMPORTEXPORT_DISPLAY_TEXTBOX.Text = transposer.GetExportedPlaylist();
+            System.Windows.Clipboard.SetText(IMPORTEXPORT_DISPLAY_TEXTBOX.Text);
+            IMPORTEXPORT_DISIPLAY_FEEDBACK.Text = "Data copied to clipboard.";
+        }
+
     }
 }

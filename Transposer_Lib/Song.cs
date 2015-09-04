@@ -74,7 +74,7 @@ namespace Transposer_Lib
             songLines = newSongLines;
 
             //transpose file name
-            expectedFilePath = TransposeBracketed(expectedFilePath, 1);
+            expectedFilePath = TransposeOnlyLastBracketed(expectedFilePath, 1);
 
             return;
         }
@@ -90,7 +90,7 @@ namespace Transposer_Lib
             songLines = newSongLines;
 
             //transpose file name
-            expectedFilePath = TransposeBracketed(expectedFilePath, -1);
+            expectedFilePath = TransposeOnlyLastBracketed(expectedFilePath, -1);
 
             return;
         }
@@ -417,7 +417,7 @@ namespace Transposer_Lib
         //Transposer Specific Methods
         //=========================================================
 
-        private static string TransposeBracketed(string input, int offset){
+        private static string TransposeOnlyLastBracketed(string input, int offset){
             int startIdx = input.LastIndexOfAny("([{".ToCharArray());
             int endIdx = input.LastIndexOfAny(")]}".ToCharArray());
             string prefix;

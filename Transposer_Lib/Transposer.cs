@@ -198,5 +198,10 @@ namespace Transposer_Lib
             Reload();
             UpdateDisplays();
         }
+
+        public string GetExportedPlaylist()
+        {
+            return currentPlaylist.Export();
+        }
     }
 }

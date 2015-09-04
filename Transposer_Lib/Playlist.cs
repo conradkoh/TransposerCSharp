@@ -11,6 +11,7 @@ namespace Transposer_Lib
         List<Song> songList = new List<Song>();
         File playlistFile = new File();
         public static string playlistDIR = System.IO.Directory.GetCurrentDirectory() + "\\Playlists";
+        public static string SONGDELIMITER = "<-------NEWSONG------->";
         public Playlist()
         {
             playlistFile.Load(playlistDIR + "\\" + "default.slist");
@@ -135,6 +136,26 @@ namespace Transposer_Lib
             Song newSong = new Song(Song.songDIR + "//" + fileName);
             songList.Add(newSong);
             SaveState();
+        }
+
+        public string Export()
+        {
+            string output = "";
+
+            foreach (Song song in songList)
+            {
+                output += song.ToString();
+                if (song != songList.Last())
+                {
+                    output += System.Environment.NewLine;
+                    output += System.Environment.NewLine;
+                    output += SONGDELIMITER;
+                    output += System.Environment.NewLine;
+                    output += System.Environment.NewLine;
+                }
+            }
+
+            return output;
         }
 
     }
