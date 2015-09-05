@@ -198,5 +198,15 @@ namespace Transposer_UnitTest
             Assert.AreEqual(0, playlist.Count());
             Assert.AreEqual("a.slist", playlist.GetFileName());
         }
+        [TestMethod]
+        public void TRANSPOSE_BRACKETED_CHORDS()
+        {
+            string actual;
+            string expected;
+            //Testing the partition where index > 0 & index < 12
+            actual = Transposer_Lib.Song.TransposeLine("A B (C D Db/A#m7)", 1);
+            expected = "Bb C (C# Eb D/Bm7)";
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

@@ -138,29 +138,48 @@ namespace Transposer_Lib
         public static string TransposeLine(string input, int offset)
         {
             string bracketCharacterSet = "<>(){}[]:-";
-            int location = 0;
-            string scope = input;
-            string output = "";
-            string suffix = input;
+            //int location = 0;
+            //string scope = input;
+            //string output = "";
+            //string suffix = input;
+            //int startIdx = 0;
+            //while (location != -1 && startIdx < input.Length && startIdx != -1)
+            //{
+            //    location = input.IndexOfAny(bracketCharacterSet.ToCharArray(), startIdx);
+            //    if (location != -1)
+            //    {
+            //        string prefix = input.Substring(startIdx, location - startIdx);
+            //        int newStartIdx = location + 1;
+            //        if (newStartIdx != -1 && newStartIdx < input.Length)
+            //        {
+            //            suffix = input.Substring(newStartIdx, input.Length - newStartIdx);
+            //            output += TransposeBlock(prefix, offset);
+            //            char bracket = input.ElementAt(location);
+            //            output += bracket;
+            //        }
+            //        startIdx = newStartIdx;
+            //    }
+            //}
+            //output += TransposeBlock(suffix, offset);
+
             int startIdx = 0;
-            while (location != -1 && startIdx < input.Length && startIdx != -1)
+            int endIdx = input.IndexOfAny(bracketCharacterSet.ToCharArray(), 0);
+            string output = "";
+            while (endIdx != -1 && endIdx < input.Length && startIdx < input.Length)
             {
-                location = input.IndexOfAny(bracketCharacterSet.ToCharArray(), startIdx);
-                if (location != -1)
-                {
-                    string prefix = input.Substring(startIdx, location - startIdx);
-                    int newStartIdx = location + 1;
-                    if (newStartIdx != -1 && newStartIdx < input.Length)
-                    {
-                        suffix = input.Substring(newStartIdx, input.Length - newStartIdx);
-                        output += TransposeBlock(prefix, offset);
-                        char bracket = input.ElementAt(location);
-                        output += bracket;
-                    }
-                    startIdx = newStartIdx;
-                }
+                string scope = input.Substring(startIdx, endIdx - startIdx);
+                char bracket = input.ElementAt(endIdx);
+                output += TransposeBlock(scope, offset);
+                output += bracket;
+
+                startIdx = endIdx + 1;
+                endIdx = input.IndexOfAny(bracketCharacterSet.ToCharArray(), startIdx);
             }
-            output += TransposeBlock(suffix, offset);
+            if (endIdx == -1 && !(startIdx > (input.Length - 1)))
+            {
+                string remainder = input.Substring(startIdx, input.Length - startIdx);
+                output += TransposeBlock(remainder, offset);
+            }
             return output;
         }
         //=========================================================
