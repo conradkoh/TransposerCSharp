@@ -359,6 +359,11 @@ namespace Transposer_WPF
             IMPORTEXPORT_DISIPLAY_FEEDBACK.Text = "Data copied to clipboard.";
         }
 
+        private void BUTTON_UPDATES_REFRESH_Click(object sender, RoutedEventArgs e)
+        {
+            UPDATES_WEBBROWSER.Refresh();
+        }
+
 
     }
 }

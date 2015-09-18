@@ -77,6 +77,13 @@
                     <TextBox x:Name="IMPORTEXPORT_DISIPLAY_FEEDBACK" HorizontalAlignment="Left" Height="23" Margin="10,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" Background="#FFE5E5E5" BorderBrush="{x:Null}"/>
                 </Grid>
             </TabItem>
+            <TabItem Header="Updates" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
+                <Grid Background="#FFE5E5E5">
+                    <WebBrowser x:Name="UPDATES_WEBBROWSER" Margin="15,37,5,0" Width="966" Source="http://transposerlive.weebly.com"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="15,10,0,0" TextWrapping="Wrap" Text="http://transposerlive.weebly.com" VerticalAlignment="Top" Width="197" Height="22"/>
+                    <Button x:Name="BUTTON_UPDATES_REFRESH" Content="Refresh" HorizontalAlignment="Left" Margin="901,10,0,0" VerticalAlignment="Top" Width="75" Click="BUTTON_UPDATES_REFRESH_Click"/>
+                </Grid>
+            </TabItem>
         </TabControl>
 
     </Grid>
