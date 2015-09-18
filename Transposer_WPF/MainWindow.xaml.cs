@@ -172,11 +172,16 @@ namespace Transposer_WPF
         {
             if (OPTIONS_TEXTBOX_INPUT.Text != "")
             {
+                if (!OPTIONS_TEXTBOX_INPUT.Text.Contains(".slist"))
+                {
+                    OPTIONS_TEXTBOX_INPUT.Text += ".slist";
+                }
                 string filePath = transposer.CreateNewPlaylist(OPTIONS_TEXTBOX_INPUT.Text);
                 OPTIONS_CREATE_FILE_MESSAGEBOX.Visibility = System.Windows.Visibility.Hidden;
                 UpdateDisplays();
-                System.Diagnostics.Process.Start(filePath);
+                //System.Diagnostics.Process.Start(filePath);
                 OPTIONS_TEXTBOX_INPUT.Text = "";
+                
             }
             
 
@@ -192,6 +197,10 @@ namespace Transposer_WPF
         {
             if (OPTIONS_TEXTBOX_INPUT.Text != "")
             {
+                if (!OPTIONS_TEXTBOX_INPUT.Text.Contains(".txt"))
+                {
+                    OPTIONS_TEXTBOX_INPUT.Text += ".txt";
+                }
                 string fileName = OPTIONS_TEXTBOX_INPUT.Text;
                 string filePath = transposer.CreateSong(fileName);
                 OPTIONS_CREATE_FILE_MESSAGEBOX.Visibility = System.Windows.Visibility.Hidden;
