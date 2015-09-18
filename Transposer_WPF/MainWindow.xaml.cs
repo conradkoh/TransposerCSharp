@@ -337,12 +337,13 @@ namespace Transposer_WPF
             {
                 transposer.AddExistingSong(item.ToString());
             }
+            OPTIONS_INPUT_SEARCH.Text = "";
             UpdateDisplays();
         }
 
-        private void OPTIONS_DISPLAY_SEARCHRESULTS_TextChanged(object sender, TextChangedEventArgs e)
+        private void OPTIONS_INPUT_SEARCH_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Search(OPTIONS_DISPLAY_SEARCHRESULTS.Text);
+            Search(OPTIONS_INPUT_SEARCH.Text);
         }
 
         private void OPTIONS_BUTTON_CLEARPLAYLIST_Click(object sender, RoutedEventArgs e)
@@ -357,6 +358,7 @@ namespace Transposer_WPF
             System.Windows.Clipboard.SetText(IMPORTEXPORT_DISPLAY_TEXTBOX.Text);
             IMPORTEXPORT_DISIPLAY_FEEDBACK.Text = "Data copied to clipboard.";
         }
+
 
     }
 }
