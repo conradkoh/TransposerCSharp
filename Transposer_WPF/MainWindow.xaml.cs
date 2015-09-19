@@ -87,6 +87,7 @@ namespace Transposer_WPF
         private void OPTIONS_BUTTON_LOAD_PLAYLIST_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
+            dialog.InitialDirectory = Playlist.playlistDIR;
             if (dialog.ShowDialog() == true)
             {
                 string filename = dialog.FileName;
@@ -229,7 +230,8 @@ namespace Transposer_WPF
         private void OPTIONS_BUTTON_ADD_SONG_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
-            dialog.InitialDirectory = System.IO.Directory.GetCurrentDirectory();
+            //dialog.InitialDirectory = System.IO.Directory.GetCurrentDirectory();
+            dialog.InitialDirectory = Song.songDIR;
             if (dialog.ShowDialog() == true)
             {
                 string filePath = dialog.FileName;
