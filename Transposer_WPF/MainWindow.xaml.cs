@@ -28,9 +28,25 @@ namespace Transposer_WPF
             transposer = new Transposer();
             UpdateDisplays();
             Search("");
+            transposer.displayNeedsUpdatingDelegateEvent += UpdateDisplays;
+        }
+        //TEST SECTION FOR EVENT BASED UPDATING
+        public void UpdateDisplays(object sender, Transposer.DisplayNeedsUpdatingArguments args)
+        {
+            DISPLAY_MAIN.Text = transposer.DISPLAY_MAIN;
+            DISPLAY_PLAYLIST.Text = transposer.DISPLAY_PLAYLIST;
+            OPTIONS_DISPLAY_PLAYLIST.Text = transposer.DISPLAY_PLAYLIST;
+            Search("");
             
         }
 
+        private void BUTTON_RELOAD_Click(object sender, RoutedEventArgs e)
+        {
+            transposer.Reload();
+            //UpdateDisplays();
+        }
+
+        //END TEST SECTION FOR EVENT BASED UPDATING
         private void BUTTON_TRANSPOSE_UP_Click(object sender, RoutedEventArgs e)
         {
             transposer.TransposeUp();
@@ -186,12 +202,6 @@ namespace Transposer_WPF
             }
             
 
-        }
-
-        private void BUTTON_RELOAD_Click(object sender, RoutedEventArgs e)
-        {
-            transposer.Reload();
-            UpdateDisplays();
         }
 
         private void OPTIONS_BUTTON_CREATE_SONG_Click(object sender, RoutedEventArgs e)
