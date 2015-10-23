@@ -7,3 +7,4 @@ C:\Users\Conrad\Desktop\Transposer C#\TransposerCSharp\Transposer_Lib\bin\Debug\
 C:\Users\Conrad\Desktop\Transposer C#\TransposerCSharp\Transposer_Lib\bin\Debug\Transposer_Lib.pdb
 C:\Users\Conrad\Desktop\Transposer C#\TransposerCSharp\Transposer_Lib\obj\Debug\Transposer_Lib.dll
 C:\Users\Conrad\Desktop\Transposer C#\TransposerCSharp\Transposer_Lib\obj\Debug\Transposer_Lib.pdb
+C:\Users\Conrad\Desktop\Transposer C#\TransposerCSharp\Transposer_Lib\obj\Debug\Transposer_Lib.csprojResolveAssemblyReference.cache

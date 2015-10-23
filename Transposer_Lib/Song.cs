@@ -137,7 +137,7 @@ namespace Transposer_Lib
         }
         public static string TransposeLine(string input, int offset)
         {
-            string bracketCharacterSet = "<>(){}[]:-";
+            string bracketCharacterSet = "<>(){}[]:-!@$%^&*|\\`~/";
             //int location = 0;
             //string scope = input;
             //string output = "";
