@@ -375,7 +375,7 @@ namespace Transposer_Lib
                 isEmptyAug = true;
             }
 
-            string invalidCharacters = "cefhklopqrtvwxyzHKLOPQRTVWXYZIJMNSU";
+            string invalidCharacters = "cefhklopqrtvwxyznHKLOPQRTVWXYZIJMNSU";
             int invalidCharIdx = input.IndexOfAny(invalidCharacters.ToCharArray());
 
             if (invalidCharIdx == -1)
@@ -384,30 +384,51 @@ namespace Transposer_Lib
             }
 
             const int maxValidAug = 22;
-            string[] validAugmentations = new string[maxValidAug];
-
-            validAugmentations[0] = "1";
-            validAugmentations[1] = "2";
-            validAugmentations[2] = "3";
-            validAugmentations[3] = "4";
-            validAugmentations[4] = "5";
-            validAugmentations[5] = "6";
-            validAugmentations[6] = "7";
-            validAugmentations[7] = "8";
-            validAugmentations[8] = "9";
-            validAugmentations[9] = "#";
-            validAugmentations[10] = "b";
-            validAugmentations[11] = "add";
-            validAugmentations[12] = "aug";
-            validAugmentations[13] = "dim";
-            validAugmentations[14] = "m";
-            validAugmentations[15] = "min";
-            validAugmentations[16] = "maj";
-            validAugmentations[17] = "sus";
-            validAugmentations[18] = "10";
-            validAugmentations[19] = "11";
-            validAugmentations[20] = "12";
-            validAugmentations[21] = "13";
+            //string[] validAugmentations = new string[maxValidAug];
+            List<string> validAugmentations = new List<string>();
+            validAugmentations.Add("1");
+            validAugmentations.Add("2");
+            validAugmentations.Add("3");
+            validAugmentations.Add("4");
+            validAugmentations.Add("5");
+            validAugmentations.Add("6");
+            validAugmentations.Add("7");
+            validAugmentations.Add("8");
+            validAugmentations.Add("9");
+            validAugmentations.Add("10");
+            validAugmentations.Add("11");
+            validAugmentations.Add("12");
+            validAugmentations.Add("13");
+            validAugmentations.Add("#");
+            validAugmentations.Add("b");
+            validAugmentations.Add("add");
+            validAugmentations.Add("aug");
+            validAugmentations.Add("dim");
+            validAugmentations.Add("min");
+            validAugmentations.Add("maj");
+            validAugmentations.Add("sus");
+            //validAugmentations[0] = "1";
+            //validAugmentations[1] = "2";
+            //validAugmentations[2] = "3";
+            //validAugmentations[3] = "4";
+            //validAugmentations[4] = "5";
+            //validAugmentations[5] = "6";
+            //validAugmentations[6] = "7";
+            //validAugmentations[7] = "8";
+            //validAugmentations[8] = "9";
+            //validAugmentations[9] = "#";
+            //validAugmentations[10] = "b";
+            //validAugmentations[11] = "add";
+            //validAugmentations[12] = "aug";
+            //validAugmentations[13] = "dim";
+            //validAugmentations[14] = "m";
+            //validAugmentations[15] = "min";
+            //validAugmentations[16] = "maj";
+            //validAugmentations[17] = "sus";
+            //validAugmentations[18] = "10";
+            //validAugmentations[19] = "11";
+            //validAugmentations[20] = "12";
+            //validAugmentations[21] = "13";
 
             foreach (var augmentation in validAugmentations)
             {

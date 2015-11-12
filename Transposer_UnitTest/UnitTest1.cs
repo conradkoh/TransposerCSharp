@@ -28,17 +28,17 @@ namespace Transposer_UnitTest
             expected = "Bb  C  C#  Eb";
             Assert.AreEqual(expected, actual);
             
-            actual = Transposer_Lib.Song.TransposeLine("Asus/Em7dim  Bmaj/Fmin5dim  C#/Gb  Db/A#m7", 1);
-            expected = "Bbsus/Fm7dim  Cmaj/F#min5dim  D/G  D/Bm7";
+            actual = Transposer_Lib.Song.TransposeLine("Asus/Em7dim  Bmaj/Fm5dim  C#/Gb  Db/A#m7", 1);
+            expected = "Bbsus/Fm7dim  Cmaj/F#m5dim  D/G  D/Bm7";
             Assert.AreEqual(expected, actual);
 
             //Testing the partition where index < 0
-            actual = Transposer_Lib.Song.TransposeLine("Asus/Em7dim  Bmaj/Fmin5dim  C#/Gb  Db/A#m7", -1);
-            expected = "G#sus/Ebm7dim  Bbmaj/Emin5dim  C/F  C/Am7";
+            actual = Transposer_Lib.Song.TransposeLine("Asus/Em7dim  Bmaj/Fm5dim  C#/Gb  Db/A#m7", -1);
+            expected = "G#sus/Ebm7dim  Bbmaj/Em5dim  C/F  C/Am7";
             Assert.AreEqual(expected, actual);
 
-            actual = Transposer_Lib.Song.TransposeLine("Asus/Em7dim  Bmaj/Fmin5dim  C#/Gb  Db/A#m7", -25);
-            expected = "G#sus/Ebm7dim  Bbmaj/Emin5dim  C/F  C/Am7";
+            actual = Transposer_Lib.Song.TransposeLine("Asus/Em7dim  Bmaj/Fm5dim  C#/Gb  Db/A#m7", -25);
+            expected = "G#sus/Ebm7dim  Bbmaj/Em5dim  C/F  C/Am7";
             Assert.AreEqual(expected, actual);
             
 
@@ -60,8 +60,8 @@ namespace Transposer_UnitTest
 
             //Testing the partition where block to be transposed is bracketed in a sentence line
 
-            actual = Transposer_Lib.Song.TransposeLine("A boy and a girl (Asus/Em7dim  Bmaj/Fmin5dim  C#/Gb  Db/A#m7)", 1);
-            expected = "A boy and a girl (Bbsus/Fm7dim  Cmaj/F#min5dim  D/G  D/Bm7)";
+            actual = Transposer_Lib.Song.TransposeLine("A boy and a girl (Asus/Em7dim  Bmaj/Fm5dim  C#/Gb  Db/A#m7)", 1);
+            expected = "A boy and a girl (Bbsus/Fm7dim  Cmaj/F#m5dim  D/G  D/Bm7)";
             Assert.AreEqual(expected, actual);
         }
 
