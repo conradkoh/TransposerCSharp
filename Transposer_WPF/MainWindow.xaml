@@ -44,7 +44,7 @@
                     <Grid x:Name="OPTIONS_GRID_FILEDROP" HorizontalAlignment="Left" Height="180" Margin="20,502,0,0" VerticalAlignment="Top" Width="231" Background="#FFD5D5D5" Drop="OPTIONS_GRID_FILE_DROP" AllowDrop="True">
                         <TextBlock x:Name="GRID_FILE_DROP_LABEL" HorizontalAlignment="Center" Margin="10,57,21,0" TextWrapping="Wrap" Text="Drop songs here to load them." VerticalAlignment="Top" Width="200" Height="64" TextAlignment="Center"/>
                     </Grid>
-                    <TextBox x:Name="OPTIONS_DISPLAY_PLAYLIST" HorizontalAlignment="Left" Height="287" Margin="21,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" IsReadOnly="True" VerticalScrollBarVisibility="Auto"/>
+                    <TextBox x:Name="OPTIONS_DISPLAY_PLAYLIST" HorizontalAlignment="Left" Height="287" Margin="21,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" IsReadOnly="True" VerticalScrollBarVisibility="Auto" TextChanged="OPTIONS_DISPLAY_PLAYLIST_TextChanged"/>
                     <Button x:Name="OPTIONS_BUTTON_CLEARPLAYLIST" Content="Clear Playlist" HorizontalAlignment="Left" Margin="22,181,0,0" VerticalAlignment="Top" Width="229" Click="OPTIONS_BUTTON_CLEARPLAYLIST_Click"/>
                     <Grid Margin="263,150,0,55" Width="432" HorizontalAlignment="Left">
                         <TextBox x:Name="OPTIONS_INPUT_SEARCH" Height="22" Margin="24,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="391" TextChanged="OPTIONS_INPUT_SEARCH_TextChanged" HorizontalAlignment="Left"/>
@@ -75,6 +75,7 @@
                     <TextBox x:Name="IMPORTEXPORT_DISPLAY_TEXTBOX" TextWrapping="Wrap" Margin="0,35,0,15"/>
                     <Button x:Name="IMPORTEXPORT_BUTTON_EXPORT" Content="Export" HorizontalAlignment="Right" VerticalAlignment="Top" Width="157" Height="30" Margin="0,2,2,0" Click="IMPORTEXPORT_BUTTON_EXPORT_Click"/>
                     <TextBox x:Name="IMPORTEXPORT_DISIPLAY_FEEDBACK" HorizontalAlignment="Left" Height="23" Margin="10,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" Background="#FFE5E5E5" BorderBrush="{x:Null}"/>
+                    <Button x:Name="IMPORTEXPORT_BUTTON_EXPORTASTEXT" Content="Export As Text" HorizontalAlignment="Left" Margin="698,2,0,0" VerticalAlignment="Top" Width="119" Height="30" Click="IMPORTEXPORT_BUTTON_EXPORTASTEXT_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Bug Report" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">

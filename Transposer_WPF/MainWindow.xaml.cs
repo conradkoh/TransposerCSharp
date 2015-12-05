@@ -28,22 +28,22 @@ namespace Transposer_WPF
             transposer = new Transposer();
             UpdateDisplays();
             Search("");
-            transposer.displayNeedsUpdatingDelegateEvent += UpdateDisplays;
+            //transposer.displayNeedsUpdatingDelegateEvent += UpdateDisplays;
         }
         //TEST SECTION FOR EVENT BASED UPDATING
-        public void UpdateDisplays(object sender, Transposer.DisplayNeedsUpdatingArguments args)
-        {
-            DISPLAY_MAIN.Text = transposer.DISPLAY_MAIN;
-            DISPLAY_PLAYLIST.Text = transposer.DISPLAY_PLAYLIST;
-            OPTIONS_DISPLAY_PLAYLIST.Text = transposer.DISPLAY_PLAYLIST;
-            Search("");
+        //public void UpdateDisplays(object sender, Transposer.DisplayNeedsUpdatingArguments args)
+        //{
+        //    DISPLAY_MAIN.Text = transposer.DISPLAY_MAIN;
+        //    DISPLAY_PLAYLIST.Text = transposer.DISPLAY_PLAYLIST;
+        //    OPTIONS_DISPLAY_PLAYLIST.Text = transposer.DISPLAY_PLAYLIST;
+        //    Search("");
             
-        }
+        //}
 
         private void BUTTON_RELOAD_Click(object sender, RoutedEventArgs e)
         {
             transposer.Reload();
-            //UpdateDisplays();
+            UpdateDisplays();
         }
 
         //END TEST SECTION FOR EVENT BASED UPDATING
@@ -345,6 +345,7 @@ namespace Transposer_WPF
         private void OPTIONS_BUTTON_ADD_SELECTED_Click(object sender, RoutedEventArgs e)
         {
             System.Collections.IList selectedItems = OPTIONS_LISTBOX_SEARCHRESULTS.SelectedItems;
+
             foreach (Object item in selectedItems)
             {
                 transposer.AddExistingSong(item.ToString());
@@ -374,6 +375,18 @@ namespace Transposer_WPF
         private void BUTTON_UPDATES_REFRESH_Click(object sender, RoutedEventArgs e)
         {
             UPDATES_WEBBROWSER.Refresh();
+        }
+
+        private void OPTIONS_DISPLAY_PLAYLIST_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            OPTIONS_DISPLAY_PLAYLIST.ScrollToEnd();
+        }
+
+        private void IMPORTEXPORT_BUTTON_EXPORTASTEXT_Click(object sender, RoutedEventArgs e)
+        {
+            IMPORTEXPORT_DISPLAY_TEXTBOX.Text = transposer.GetExportedPlaylistAsText();
+            System.Windows.Clipboard.SetText(IMPORTEXPORT_DISPLAY_TEXTBOX.Text);
+            IMPORTEXPORT_DISIPLAY_FEEDBACK.Text = "Text data copied to clipboard.";
         }
 
 

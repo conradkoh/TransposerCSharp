@@ -29,23 +29,23 @@ namespace Transposer_Lib
         Song currentSong;
 
         //EVENT HANDLING TEST SECTION
-        public class DisplayNeedsUpdatingArguments : EventArgs
-        {
-            private string incomingInfo;
-            public DisplayNeedsUpdatingArguments(string input){
-                incomingInfo = input;
-            }
+        //public class DisplayNeedsUpdatingArguments : EventArgs
+        //{
+        //    private string incomingInfo;
+        //    public DisplayNeedsUpdatingArguments(string input){
+        //        incomingInfo = input;
+        //    }
 
-            public string GetInfo()
-            {
-                return incomingInfo;
-            }
-        }
-        public delegate void DisplayNeedsUpdatingDelegate(object source, DisplayNeedsUpdatingArguments displayArguments); //a delegate declares a new type
+        //    public string GetInfo()
+        //    {
+        //        return incomingInfo;
+        //    }
+        //}
+        //public delegate void DisplayNeedsUpdatingDelegate(object source, DisplayNeedsUpdatingArguments displayArguments); //a delegate declares a new type
         
-        //DECLARATION OF THE EVENT HANDLER, WHICH WILL SUBSCRIBE TO FUNCTIONS DECLARED OUTSIDE OF THIS CLASS
-        //NOTE: this section can be implemented separately from the earlier 2 defintions
-        public event DisplayNeedsUpdatingDelegate displayNeedsUpdatingDelegateEvent; //an event is member of the delegate class. i.e, each event has only one delegate
+        ////DECLARATION OF THE EVENT HANDLER, WHICH WILL SUBSCRIBE TO FUNCTIONS DECLARED OUTSIDE OF THIS CLASS
+        ////NOTE: this section can be implemented separately from the earlier 2 defintions
+        //public event DisplayNeedsUpdatingDelegate displayNeedsUpdatingDelegateEvent; //an event is member of the delegate class. i.e, each event has only one delegate
 
         //END EVENT HANDLING TEST SECTION
         public Transposer()
@@ -152,12 +152,12 @@ namespace Transposer_Lib
                 DISPLAY_MAIN = (currentIdx + 1) + ". " + currentSong.ToString();
 
 
-                if (displayNeedsUpdatingDelegateEvent != null) //trigger only if someone has subscribed to event
-                {
-                    string args = "display updated";
-                    displayNeedsUpdatingDelegateEvent(this, new DisplayNeedsUpdatingArguments(args));
+                //if (displayNeedsUpdatingDelegateEvent != null) //trigger only if someone has subscribed to event
+                //{
+                //    string args = "display updated";
+                //    displayNeedsUpdatingDelegateEvent(this, new DisplayNeedsUpdatingArguments(args));
 
-                }
+                //}
 
             }
             catch (Exception e) { }
@@ -232,6 +232,11 @@ namespace Transposer_Lib
         public string GetExportedPlaylist()
         {
             return currentPlaylist.Export();
+        }
+
+        public string GetExportedPlaylistAsText()
+        {
+            return currentPlaylist.ExportAsText();
         }
     }
 }

@@ -158,5 +158,24 @@ namespace Transposer_Lib
             return output;
         }
 
+        public string ExportAsText()
+        {
+            string output = "";
+
+            foreach (Song song in songList)
+            {
+                output += song.ToString();
+                if (song != songList.Last())
+                {
+                    output += System.Environment.NewLine;
+                    output += System.Environment.NewLine;
+                    output += System.Environment.NewLine;
+                    output += System.Environment.NewLine;
+                    output += System.Environment.NewLine;
+                }
+            }
+
+            return output;
+        }
     }
 }

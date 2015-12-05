@@ -137,7 +137,7 @@ namespace Transposer_Lib
         }
         public static string TransposeLine(string input, int offset)
         {
-            string bracketCharacterSet = "<>(){}[]:-!@$%^&*|\\`~/?\'\";_+=";
+            string blockDelimiterCharacterSet = "<>(){}[]:-!@$%^&*|\\`~/?\'\";_+=\n\r";
             //int location = 0;
             //string scope = input;
             //string output = "";
@@ -163,17 +163,17 @@ namespace Transposer_Lib
             //output += TransposeBlock(suffix, offset);
 
             int startIdx = 0;
-            int endIdx = input.IndexOfAny(bracketCharacterSet.ToCharArray(), 0);
+            int endIdx = input.IndexOfAny(blockDelimiterCharacterSet.ToCharArray(), 0);
             string output = "";
             while (endIdx != -1 && endIdx < input.Length && startIdx < input.Length)
             {
                 string scope = input.Substring(startIdx, endIdx - startIdx);
-                char bracket = input.ElementAt(endIdx);
+                char blockDelimiter = input.ElementAt(endIdx);
                 output += TransposeBlock(scope, offset);
-                output += bracket;
+                output += blockDelimiter;
 
                 startIdx = endIdx + 1;
-                endIdx = input.IndexOfAny(bracketCharacterSet.ToCharArray(), startIdx);
+                endIdx = input.IndexOfAny(blockDelimiterCharacterSet.ToCharArray(), startIdx);
             }
             if (endIdx == -1 && !(startIdx > (input.Length - 1)))
             {
@@ -404,7 +404,7 @@ namespace Transposer_Lib
             validAugmentations.Add("add");
             validAugmentations.Add("aug");
             validAugmentations.Add("dim");
-            validAugmentations.Add("min");
+            validAugmentations.Add("m");
             validAugmentations.Add("maj");
             validAugmentations.Add("sus");
             //validAugmentations[0] = "1";
