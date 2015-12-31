@@ -124,18 +124,31 @@ namespace Transposer_Lib
             playlistFile.Save();
         }
 
+        public void SavePlaylist()
+        {
+            List<string> songFiles = new List<string>();
+            foreach (Song song in songList)
+            {
+                string currentFileName = song.GetFileName();
+                songFiles.Add(currentFileName);
+            }
+
+            playlistFile.SetFileContent(songFiles);
+            playlistFile.Save();
+        }
+
         public void AddSong(string filePath)
         {
             Song newSong = new Song(filePath);
             songList.Add(newSong);
-            SaveState();
+            SavePlaylist();
         }
 
         public void AddExistingSong(string fileName)
         {
             Song newSong = new Song(Song.songDIR + "//" + fileName);
             songList.Add(newSong);
-            SaveState();
+            SavePlaylist();
         }
 
         public string Export()
