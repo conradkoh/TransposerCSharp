@@ -1,6 +1,8 @@
 FOREVER
 PG: 1/2
 F029										KEY: E
+Verse 1:
+
 		 E		
 	GIVE THANKS TO THE LORD, OUR GOD AND KING
 	      E	
@@ -12,6 +14,7 @@ F029										KEY: E
 		  B                    C#m
 SING PRAISE, SING PRAISE
 
+Verse 2:
 	     E	
 WITH A MIGHTY HAND AND OUTSTRETCHED ARM
       E	
@@ -25,17 +28,7 @@ SING PRAISE, SING PRAISE
 	 B/D#		A	               
 SING PRAISE, SING PRAISE
 
-©2000 Chris Tomlin
-
-
-
-
-
-
-
-FOREVER
-PG: 2/2
-F029										KEY: E
+Chorus:
        E 	
 FOREVER GOD IS FAITHFUL
        C#m   	
@@ -45,6 +38,7 @@ FOREVER GOD IS WITH US
        A				   E	
 FOREVER, AND EVER, FOREVER
 
+Verse 3:
 		  E
 FROM THE RISING TO THE SETTING SUN
       E	

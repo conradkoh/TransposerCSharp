@@ -1,32 +1,31 @@
-
 Verse:
-F			Dm
+F   Dm
 yu dian de zong xin, ye su
-Bb	C
+Bb C
 shi jie de zong xin, ye su
-Bb	C/Bb		Am		Dm
+Bb C/Bb  Am  Dm
 shu wu dou ben yu ni, shu yu ni, gui yu ni
-Gm	Bb/C	F
+Gm C F
 ni she rong yao jun wang
 
 Chorus:
-Bb/C		F		C		Am	Dm
-wo men huan ying, jun wang jiang lin, ke wang kan jian, ni de ?? ??
-Bb		C		Am		D		Gm	C
-hu qiu ni lai fan bo, zhen dong zhe tu de, fu dian wo men he wu de re qing
-Bb/C	F	C/E	Am			Dm
-wo men huan ying, jun wang jiang lin, tong xin gao fan, ni he wu de ming
-Bb	C/Bb	Am	D		Gm		C		F
-hu qing tian chuang da kau, chun yu bu ting xi, wo men hu man huan ying jun wang jiang lin
+C  F  C  Am Dm
+wo men huan ying, jun wang jiang lin, ke wang kan jian, ni de zhang xian
+Bb  C  Am  Dm  Gm C
+hu qiu ni lai fan zhuan, zhen dong zhe tu de, fu xing wo men sheng jie de re qing
+C F C/E Am   Dm
+wo men huan ying, jun wang jiang lin, tong xin gao ju, ni sheng jie de ming
+Bb C/Bb Am Dm  Gm  C  F
+hu qing tian chuang da kai, chun yu bu ting xi, wo men hu han huan ying jun wang jiang lin
 
 Bridge
-F		Dm
+F  Dm
 大大张口...大大充满
-Bb		Bb/C	C
+Bb  Bb/C C
 恩膏如雨...浇灌这地
-F		Dm
+F  Dm
 眼未看见...耳未听见
-Bb		Bb/C		(To.chorus)
+Bb  Bb/C  (To.chorus)
 渴慕更多看见你的荣面
 我们欢迎君王降临 -
 2
