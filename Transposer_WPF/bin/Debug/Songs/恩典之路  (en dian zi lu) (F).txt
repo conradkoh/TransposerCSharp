@@ -1,5 +1,3 @@
-恩典之路 [F]
-[Default Arrangement]
 F       C     Dm     F
 祢是我的主  引我走义路
 Bb     F       Gm/Bb    C
@@ -10,6 +8,8 @@ Bb       F
 永远不变的应许
     Gm Bb     C
 这一生都是祝福
+
+
 F      C       Dm      F
 一步又一步  这是恩典之路
   Bb   F        Gm     C

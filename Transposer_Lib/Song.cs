@@ -62,6 +62,22 @@ namespace Transposer_Lib
 	    	    isInitalized = true;
             }
         }
+
+        public void TransposeByOffset(int offset)
+        {
+            List<string> newSongLines = new List<string>();
+            foreach (string line in songLines)
+            {
+                string transposedLine = TransposeLine(line, 1);
+                newSongLines.Add(transposedLine);
+            }
+            songLines = newSongLines;
+
+            //transpose file name
+            expectedFilePath = TransposeOnlyLastBracketed(expectedFilePath, offset);
+            return;
+        }
+
         public void TransposeUp()
         {
             //transpose file content
@@ -375,7 +391,7 @@ namespace Transposer_Lib
                 isEmptyAug = true;
             }
 
-            string invalidCharacters = "cefhklopqrtvwxyznHKLOPQRTVWXYZIJMNSU";
+            string invalidCharacters = "cefhklopqrtvwxyznHKLOPQRTVWXYZIJNSU";
             int invalidCharIdx = input.IndexOfAny(invalidCharacters.ToCharArray());
 
             if (invalidCharIdx == -1)

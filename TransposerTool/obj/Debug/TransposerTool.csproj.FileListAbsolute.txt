@@ -1,0 +1,8 @@
+Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\TransposerTool\bin\Debug\TransposerTool.exe.config
+Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\TransposerTool\bin\Debug\TransposerTool.exe
+Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\TransposerTool\bin\Debug\TransposerTool.pdb
+Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\TransposerTool\bin\Debug\Transposer_Lib.dll
+Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\TransposerTool\bin\Debug\Transposer_Lib.pdb
+Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\TransposerTool\obj\Debug\TransposerTool.csprojResolveAssemblyReference.cache
+Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\TransposerTool\obj\Debug\TransposerTool.exe
+Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\TransposerTool\obj\Debug\TransposerTool.pdb

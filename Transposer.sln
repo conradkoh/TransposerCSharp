@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transposer_WPF", "Transposer_WPF\Transposer_WPF.csproj", "{53EB264B-1250-4F36-B770-6FB075805D5B}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transposer_Lib", "Transposer_Lib\Transposer_Lib.csproj", "{92279372-1240-413C-BD7D-EECD5235F728}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transposer_Console", "Transposer_Console\Transposer_Console.csproj", "{96F24E9E-7C32-4BF6-95CF-3C4FF971A5E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransposerTool", "TransposerTool\TransposerTool.csproj", "{89FD1729-26C6-42DD-A8BD-42E098D907CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,22 @@ Global
 		{96F24E9E-7C32-4BF6-95CF-3C4FF971A5E2}.Release|ARM.ActiveCfg = Release|Any CPU
 		{96F24E9E-7C32-4BF6-95CF-3C4FF971A5E2}.Release|x64.ActiveCfg = Release|Any CPU
 		{96F24E9E-7C32-4BF6-95CF-3C4FF971A5E2}.Release|x86.ActiveCfg = Release|Any CPU
+		{89FD1729-26C6-42DD-A8BD-42E098D907CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89FD1729-26C6-42DD-A8BD-42E098D907CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89FD1729-26C6-42DD-A8BD-42E098D907CB}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{89FD1729-26C6-42DD-A8BD-42E098D907CB}.Debug|ARM.Build.0 = Debug|Any CPU
+		{89FD1729-26C6-42DD-A8BD-42E098D907CB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{89FD1729-26C6-42DD-A8BD-42E098D907CB}.Debug|x64.Build.0 = Debug|Any CPU
+		{89FD1729-26C6-42DD-A8BD-42E098D907CB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{89FD1729-26C6-42DD-A8BD-42E098D907CB}.Debug|x86.Build.0 = Debug|Any CPU
+		{89FD1729-26C6-42DD-A8BD-42E098D907CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89FD1729-26C6-42DD-A8BD-42E098D907CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89FD1729-26C6-42DD-A8BD-42E098D907CB}.Release|ARM.ActiveCfg = Release|Any CPU
+		{89FD1729-26C6-42DD-A8BD-42E098D907CB}.Release|ARM.Build.0 = Release|Any CPU
+		{89FD1729-26C6-42DD-A8BD-42E098D907CB}.Release|x64.ActiveCfg = Release|Any CPU
+		{89FD1729-26C6-42DD-A8BD-42E098D907CB}.Release|x64.Build.0 = Release|Any CPU
+		{89FD1729-26C6-42DD-A8BD-42E098D907CB}.Release|x86.ActiveCfg = Release|Any CPU
+		{89FD1729-26C6-42DD-A8BD-42E098D907CB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

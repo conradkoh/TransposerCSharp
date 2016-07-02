@@ -29,7 +29,17 @@ G
 	       G		   C  	
 	FOREVER I AM CHANGED
 
-
+Bridge:
+	Am					   Em	
+	OH, WHAT A GLORIOUS DAY
+					    F
+	WHAT A GLORIOUS WAY
+		  C
+	THAT YOU HAVE SAVED ME
+	Am					   Em
+	OH, WHAT A GLORIOUS DAY
+					    F      
+	WHAT A GLORIOUS NAME
 
 
 
@@ -46,25 +56,6 @@ WHEN I STAND IN THAT PLACE
 	EARTHLY PAIN FINALLY WILL CEASE
 	CELEBRATE, JESUS IS ALIVE
 	HE’S ALIVE!
-
-	Am					   Em	
-	OH, WHAT A GLORIOUS DAY
-					    F
-	WHAT A GLORIOUS WAY
-		  C
-	THAT YOU HAVE SAVED ME
-	Am					   Em
-	OH, WHAT A GLORIOUS DAY
-					    F      
-	WHAT A GLORIOUS NAME
-
-
-
-
-
-
-
-
 
 
 HAPPY DAY

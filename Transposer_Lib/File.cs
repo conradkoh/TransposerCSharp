@@ -12,7 +12,7 @@ namespace Transposer_Lib
         public static string _defaultDIR = System.IO.Directory.GetCurrentDirectory() + "\\Default Directory";
 
         private string _filePath;
-
+        
         private List<string> _fileContent = new List<string>();
         private Stack<string> _debugInfo = new Stack<string>();
         public File()
