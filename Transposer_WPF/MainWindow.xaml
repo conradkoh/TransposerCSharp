@@ -78,6 +78,17 @@
                     <Button x:Name="IMPORTEXPORT_BUTTON_EXPORTASTEXT" Content="Export As Text" HorizontalAlignment="Left" Margin="698,2,0,0" VerticalAlignment="Top" Width="119" Height="30" Click="IMPORTEXPORT_BUTTON_EXPORTASTEXT_Click"/>
                 </Grid>
             </TabItem>
+            <TabItem Header="Blend" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="BLEND_TEXTBOX_RETRIEVE_FROM" HorizontalAlignment="Left" Margin="10,44,0,0" TextWrapping="Wrap" Width="481" AcceptsReturn="True" AcceptsTab="True"/>
+                    <TextBox x:Name="BLEND_TEXTBOX_INSERT_INTO" Margin="496,44,0,0" TextWrapping="Wrap" Width="480" HorizontalAlignment="Left" AcceptsReturn="True" AcceptsTab="True"/>
+                    <Label x:Name="label" Content="Retrieve Chords From" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label1" Content="Insert Into" HorizontalAlignment="Left" Margin="496,13,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="BLEND_BUTTON_INSERT" Content="Insert" HorizontalAlignment="Right" Margin="0,16,10,0" VerticalAlignment="Top" Width="75" Click="BLEND_BUTTON_INSERT_Click"/>
+                    <Button x:Name="BLEND_BUTTON_CLEAR" Content="Clear" HorizontalAlignment="Right" Margin="0,16,90,0" VerticalAlignment="Top" Width="75" Click="BLEND_BUTTON_CLEAR_Click"/>
+                    <Button x:Name="BLEND_BUTTON_FORMAT" Content="Format" HorizontalAlignment="Right" Margin="0,16,170,0" VerticalAlignment="Top" Width="75" Click="BLEND_BUTTON_FORMAT_Click"/>
+                </Grid>
+            </TabItem>
             <TabItem Header="Bug Report" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
                 <Grid Background="#FFE5E5E5">
                     <WebBrowser x:Name="UPDATES_WEBBROWSER" Margin="15,37,5,0" Width="966" Source="http://transposerlive.weebly.com/bug-report.html"/>

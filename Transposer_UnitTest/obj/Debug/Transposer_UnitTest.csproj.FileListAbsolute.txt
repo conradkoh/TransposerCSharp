@@ -17,7 +17,6 @@ Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_UnitTe
 Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_UnitTest\bin\Debug\Transposer_Lib.dll
 Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_UnitTest\bin\Debug\Transposer_Lib.pdb
-Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
 Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_UnitTest\obj\Debug\Transposer_UnitTest.csprojResolveAssemblyReference.cache
 Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_UnitTest\obj\Debug\Transposer_UnitTest.dll
 Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_UnitTest\obj\Debug\Transposer_UnitTest.pdb

@@ -32,12 +32,10 @@ C:\Users\Conrad\Desktop\Transposer C#\TransposerCSharp\Transposer_WPF\obj\Debug\
 C:\Users\Conrad\Desktop\Transposer C#\TransposerCSharp\Transposer_WPF\obj\Debug\Transposer_WPF.csproj.GenerateResource.Cache
 C:\Users\Conrad\Desktop\Transposer C#\TransposerCSharp\Transposer_WPF\obj\Debug\Transposer_WPF.exe
 C:\Users\Conrad\Desktop\Transposer C#\TransposerCSharp\Transposer_WPF\obj\Debug\Transposer_WPF.pdb
-Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_WPF\bin\Debug\Transposer_WPF.exe.config
-Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_WPF\obj\Debug\Transposer_WPF.exe
-Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_WPF\obj\Debug\Transposer_WPF.pdb
 Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_WPF\bin\Debug\Transposer_WPF.exe
-Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_WPF\bin\Debug\Transposer_WPF.pdb
 Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_WPF\bin\Debug\Transposer_Lib.dll
+Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_WPF\bin\Debug\Transposer_WPF.exe.config
+Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_WPF\bin\Debug\Transposer_WPF.pdb
 Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_WPF\bin\Debug\Transposer_Lib.pdb
 Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_WPF\obj\Debug\Transposer_WPF.csprojResolveAssemblyReference.cache
 Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_WPF\obj\Debug\MainWindow.baml
@@ -49,3 +47,5 @@ Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_WPF\ob
 Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_WPF\obj\Debug\Transposer_WPF.g.resources
 Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_WPF\obj\Debug\Transposer_WPF.Properties.Resources.resources
 Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_WPF\obj\Debug\Transposer_WPF.csproj.GenerateResource.Cache
+Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_WPF\obj\Debug\Transposer_WPF.exe
+Z:\Conrad\Design\Programming\C#\Transposer C#\TransposerCSharp\Transposer_WPF\obj\Debug\Transposer_WPF.pdb

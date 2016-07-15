@@ -151,6 +151,9 @@ namespace Transposer_Lib
             songFile.SetFileContent(songLines);
             songFile.Save();
         }
+        //=========================================================
+        //Transpose Algorithm Methods
+        //=========================================================
         public static string TransposeLine(string input, int offset)
         {
             string blockDelimiterCharacterSet = "<>(){}[]:-!@$%^&*|\\`~/?\'\";_+=\n\r";
@@ -198,9 +201,7 @@ namespace Transposer_Lib
             }
             return output;
         }
-        //=========================================================
-        //Transpose Algorithm Methods
-        //=========================================================
+
         public static string TransposeBlock(string input, int offset)
         {
             string transposedLine = input;

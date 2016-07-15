@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Transposer_Lib;
+using Transposer_Lib.Helpers;
 namespace Transposer_WPF
 {
     /// <summary>
@@ -389,6 +390,23 @@ namespace Transposer_WPF
             IMPORTEXPORT_DISIPLAY_FEEDBACK.Text = "Text data copied to clipboard.";
         }
 
+        private void BLEND_BUTTON_INSERT_Click(object sender, RoutedEventArgs e)
+        {
+            string input_retrieve_from = BLEND_TEXTBOX_RETRIEVE_FROM.Text;
+            string input_insert_into = BLEND_TEXTBOX_INSERT_INTO.Text;
 
+            BLEND_TEXTBOX_INSERT_INTO.Text = Core.Blend(input_retrieve_from, input_insert_into);
+        }
+
+        private void BLEND_BUTTON_CLEAR_Click(object sender, RoutedEventArgs e)
+        {
+            BLEND_TEXTBOX_RETRIEVE_FROM.Text = "";
+            BLEND_TEXTBOX_INSERT_INTO.Text = "";
+        }
+
+        private void BLEND_BUTTON_FORMAT_Click(object sender, RoutedEventArgs e)
+        {
+            BLEND_TEXTBOX_INSERT_INTO.Text = BLEND_TEXTBOX_INSERT_INTO.Text.Replace("\t", "   ");
+        }
     }
 }
