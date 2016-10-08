@@ -1,8 +1,8 @@
-Intro
+[Intro]
 D  -  F#m  -  E  -  A/C#
 D  -  F#m  -  E  -  A/C#
 
-Verse  1
+[Verse  1]
 D              F#m
 Our  Father  everlasting
 E            A/C#  D
@@ -16,7 +16,7 @@ Conceiving  Christ  the  Son
             E
 Jesus  our  Savior
 
-Chorus
+[Chorus]
 A                    Bm
 I  believe  in  God  our  Father
 D                        E
@@ -32,18 +32,19 @@ That  we  will  rise  again
 F#m                    D      E      
 For  I  believe  in  the  name  of  Jesus
 
-Bridge
+[Instrumental]
+D      F#m     E     A/C#    D     F#m     E   A/C#
+
+[Bridge]
   D    F#m      E    A/C#
 I  believe  in  You
     D            F#m    E    A/C#
-1
 I  believe  You  rose  again
     D            E                A    (To  Chorus)
 I  believe  that  Jesus  Christ  is  Lord
 
 
-Intro
-Verse  2
+[Verse  2]
 D                    F#m
 Our  Judge  and  our  Defender  
 E                A/C#
@@ -58,7 +59,7 @@ You  rose  in  glorious  life
 Forever  seated  high
 
 
-Chorus  2
+[Chorus  2]
 I  believe  in  life  eternal
 I  believe  in  the  virgin  birth
 I  believe  in  the  saints'  communion

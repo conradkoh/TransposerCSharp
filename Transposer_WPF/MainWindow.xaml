@@ -75,7 +75,7 @@
                     <TextBox x:Name="IMPORTEXPORT_DISPLAY_TEXTBOX" TextWrapping="Wrap" Margin="0,35,0,15"/>
                     <Button x:Name="IMPORTEXPORT_BUTTON_EXPORT" Content="Export" HorizontalAlignment="Right" VerticalAlignment="Top" Width="157" Height="30" Margin="0,2,2,0" Click="IMPORTEXPORT_BUTTON_EXPORT_Click"/>
                     <TextBox x:Name="IMPORTEXPORT_DISIPLAY_FEEDBACK" HorizontalAlignment="Left" Height="23" Margin="10,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" Background="#FFE5E5E5" BorderBrush="{x:Null}" IsReadOnly="True"/>
-                    <Button x:Name="IMPORTEXPORT_BUTTON_EXPORTASTEXT" Content="Export As Text" HorizontalAlignment="Left" Margin="698,2,0,0" VerticalAlignment="Top" Width="119" Height="30" Click="IMPORTEXPORT_BUTTON_EXPORTASTEXT_Click"/>
+                    <Button x:Name="IMPORTEXPORT_BUTTON_EXPORTASTEXT" Content="Export As Text" HorizontalAlignment="Right" Margin="0,2,164,0" VerticalAlignment="Top" Width="119" Height="30" Click="IMPORTEXPORT_BUTTON_EXPORTASTEXT_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Blend" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
