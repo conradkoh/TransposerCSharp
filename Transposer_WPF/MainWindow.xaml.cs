@@ -25,10 +25,11 @@ namespace Transposer_WPF
         public MainWindow()
         {
             InitializeComponent();
-            MaintainDirectories();
+            this.MaintainDirectories();
             transposer = new Transposer();
-            UpdateDisplays();
-            Search("");
+            this.UpdateDisplays();
+            this.Search("");
+            this.Initialize();
             //transposer.displayNeedsUpdatingDelegateEvent += UpdateDisplays;
         }
         //TEST SECTION FOR EVENT BASED UPDATING
@@ -40,7 +41,10 @@ namespace Transposer_WPF
         //    Search("");
             
         //}
-
+        private void Initialize()
+        {
+            OPTIONS_CREATE_FILE_MESSAGEBOX.Visibility = System.Windows.Visibility.Hidden; //Set the display box to hidden on the first init
+        }
         private void BUTTON_RELOAD_Click(object sender, RoutedEventArgs e)
         {
             transposer.Reload();
@@ -234,6 +238,8 @@ namespace Transposer_WPF
             else
             {
                 OPTIONS_CREATE_FILE_MESSAGEBOX.Visibility = System.Windows.Visibility.Visible;
+                OPTIONS_TEXTBOX_INPUT.Focus();
+                OPTIONS_BUTTON_CREATE_SONG.IsDefault = true;
             }
             OPTIONS_TEXTBOX_INPUT.Text = "";
         }
@@ -353,6 +359,9 @@ namespace Transposer_WPF
             }
             OPTIONS_INPUT_SEARCH.Text = "";
             UpdateDisplays();
+
+            //UI actions
+            OPTIONS_INPUT_SEARCH.Focus();
         }
 
         private void OPTIONS_INPUT_SEARCH_TextChanged(object sender, TextChangedEventArgs e)
@@ -407,6 +416,18 @@ namespace Transposer_WPF
         private void BLEND_BUTTON_FORMAT_Click(object sender, RoutedEventArgs e)
         {
             BLEND_TEXTBOX_INSERT_INTO.Text = BLEND_TEXTBOX_INSERT_INTO.Text.Replace("\t", "   ");
+        }
+
+        private void OPTIONS_BUTTON_RELOAD_Click(object sender, RoutedEventArgs e)
+        {
+            transposer.Reload();
+            UpdateDisplays();
+
+        }
+
+        private void OPTIONS_INPUT_SEARCH_GotFocus(object sender, RoutedEventArgs e)
+        {
+            OPTIONS_BUTTON_ADD_SELECTED.IsDefault = true;
         }
     }
 }

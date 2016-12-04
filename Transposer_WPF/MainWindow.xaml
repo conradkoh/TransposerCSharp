@@ -1,7 +1,9 @@
 ﻿<Window x:Class="Transposer_WPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Transposer" Height="830.4" Width="1000" WindowStartupLocation="CenterScreen">
+        Title="Transposer" Height="830.4" Width="1000" WindowStartupLocation="CenterScreen"
+        MinHeight="830.4" MinWidth="1000"
+        >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
@@ -47,12 +49,13 @@
                     <TextBox x:Name="OPTIONS_DISPLAY_PLAYLIST" HorizontalAlignment="Left" Height="287" Margin="21,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" IsReadOnly="True" VerticalScrollBarVisibility="Auto" TextChanged="OPTIONS_DISPLAY_PLAYLIST_TextChanged"/>
                     <Button x:Name="OPTIONS_BUTTON_CLEARPLAYLIST" Content="Clear Playlist" HorizontalAlignment="Left" Margin="22,181,0,0" VerticalAlignment="Top" Width="229" Click="OPTIONS_BUTTON_CLEARPLAYLIST_Click"/>
                     <Grid Margin="263,150,0,55" Width="432" HorizontalAlignment="Left">
-                        <TextBox x:Name="OPTIONS_INPUT_SEARCH" Height="22" Margin="24,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="391" TextChanged="OPTIONS_INPUT_SEARCH_TextChanged" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="OPTIONS_INPUT_SEARCH" Height="22" Margin="24,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="391" TextChanged="OPTIONS_INPUT_SEARCH_TextChanged" HorizontalAlignment="Left" GotFocus="OPTIONS_INPUT_SEARCH_GotFocus"/>
                         <Button x:Name="OPTIONS_BUTTON_ADD_SELECTED" Content="Add" HorizontalAlignment="Right" Margin="0,58,17,0" VerticalAlignment="Top" Width="75" Click="OPTIONS_BUTTON_ADD_SELECTED_Click"/>
                         <TextBlock HorizontalAlignment="Left" Margin="24,10,0,0" TextWrapping="Wrap" Text="Search:" VerticalAlignment="Top"/>
                         <ListBox x:Name="OPTIONS_LISTBOX_SEARCHRESULTS" Margin="24,61,0,6.867" Width="308" HorizontalAlignment="Left" />
                     </Grid>
-                    <Grid x:Name="OPTIONS_CREATE_FILE_MESSAGEBOX" Height="159" Margin="0,76,266,0" VerticalAlignment="Top" Width="347" Background="#FFD7D6D6" HorizontalAlignment="Right" Visibility="Hidden">
+                    <Button x:Name="OPTIONS_BUTTON_RELOAD" Content="Reload" Margin="0,70,266,0" VerticalAlignment="Top" Width="240" Height="30" HorizontalAlignment="Right" Click="OPTIONS_BUTTON_RELOAD_Click"/>
+                    <Grid x:Name="OPTIONS_CREATE_FILE_MESSAGEBOX" Height="159" Margin="0,76,266,0" VerticalAlignment="Top" Width="347" Background="#FFD7D6D6" HorizontalAlignment="Right" Visibility="Visible">
                         <Grid.Effect>
                             <DropShadowEffect ShadowDepth="1.5"/>
                         </Grid.Effect>
