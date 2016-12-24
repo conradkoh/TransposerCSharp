@@ -1,0 +1,3 @@
+[submodule "Transposer_WPF/bin/Debug/Songs"]
+	path = Transposer_WPF/bin/Debug/Songs
+	url = https://github.com/conradkoh/transposer_songs.git
