@@ -115,6 +115,13 @@ namespace Transposer_Lib.Helpers
                 }
             }
 
+            //Add the remaining lines that may not have been added
+            while(insert_line_index < lines_lyrics_count)
+            {
+                output.Add(lines_lyrics[insert_line_index]);
+                insert_line_index++;
+            }
+
             return String.Join("\n", output);
         }
 
